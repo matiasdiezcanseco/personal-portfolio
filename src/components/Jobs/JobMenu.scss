@@ -1,0 +1,39 @@
+@use '../../constants/colors' as color;
+@use '../../constants/sizes' as size;
+
+.jobmenu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2rem;
+
+  @media (min-width: size.$md) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-bottom: 0rem;
+    border-right: 1px solid color.$txtHigh;
+    width: 20%;
+    height: 100%;
+  }
+
+  &__item {
+    cursor: pointer;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    font-size: 1rem;
+    text-align: right;
+
+    &:hover {
+      color: color.$txtHigh;
+    }
+
+    &--selected {
+      border-right: 3px solid color.$txtHigh;
+      color: color.$txtHigh;
+      font-weight: 600;
+    }
+  }
+}

@@ -1,0 +1,123 @@
+@use '../../constants/colors' as color;
+@use '../../constants/sizes' as size;
+
+.about {
+  margin: 0 auto;
+  margin-bottom: 6rem;
+  padding: 0 2rem;
+  max-width: 1200px;
+  @media (min-width: size.$md) {
+    padding: 0 7rem;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    margin-bottom: 2rem;
+    padding: 0;
+    color: color.$txtMed;
+    font-size: 2.2rem;
+
+    @media (min-width: size.$md) {
+      flex-direction: row;
+      align-items: flex-end;
+    }
+
+    &--number {
+      color: color.$txtHigh;
+      font-size: 1.8rem;
+
+      @media (min-width: size.$md) {
+        margin-right: 1rem;
+      }
+    }
+
+    &--line {
+      flex-grow: 1;
+      align-self: center;
+      margin-left: 1rem;
+      border-bottom: 1px solid color.$txtLow;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 0;
+
+    @media (min-width: size.$md) {
+      flex-direction: row;
+    }
+  }
+  &__desc {
+    margin-right: 0;
+    width: 100%;
+
+    @media (min-width: size.$md) {
+      margin-right: 1rem;
+      width: 60%;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.4rem;
+    }
+
+    &--link {
+      transition: all 300ms ease-in-out;
+      cursor: pointer;
+      color: color.$txtHigh;
+      text-decoration-color: transparent;
+
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color: color.$txtHigh;
+      }
+    }
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 10px;
+    font-size: 0.95rem;
+
+    li {
+      cursor: pointer;
+
+      a {
+        transition: all 300ms ease-in-out;
+        color: color.$txtHigh;
+        text-decoration-color: transparent;
+        &:hover {
+          text-decoration: underline;
+          text-decoration-color: color.$txtHigh;
+        }
+      }
+    }
+  }
+
+  &__image {
+    margin: 0 auto;
+    margin-top: 2rem;
+    box-shadow: 8px 8px 5px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 0.5rem;
+    background-size: contain;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+
+    @media (min-width: size.$md) {
+      align-self: flex-start;
+      margin-top: 0;
+      width: 200px;
+      height: 200px;
+    }
+
+    @media (min-width: size.$lg) {
+      width: 300px;
+      height: 300px;
+    }
+  }
+}

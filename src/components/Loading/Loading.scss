@@ -1,0 +1,9 @@
+@use '../../constants/colors' as color;
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: color.$bg;
+  height: 100vh;
+}
