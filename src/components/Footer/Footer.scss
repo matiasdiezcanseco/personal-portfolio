@@ -1,0 +1,43 @@
+@use '../../constants/colors' as color;
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  padding: 0 2rem;
+  text-align: center;
+  &__p {
+    margin: 0;
+    margin-bottom: 0.6rem;
+  }
+
+  &__list {
+    display: flex;
+    margin: 0;
+    margin-bottom: 0.6rem;
+    padding: 0;
+    list-style-type: none;
+    li {
+      cursor: pointer;
+      margin: 0 0.5rem;
+
+      a {
+        transition: color 300ms ease-in-out;
+        color: color.$txtLow;
+        &:hover {
+          color: color.$txtHigh;
+        }
+      }
+    }
+  }
+}
+
+.hover {
+  transition: color 300ms ease-in-out;
+  cursor: pointer;
+  &:hover {
+    color: color.$txtHigh;
+  }
+}

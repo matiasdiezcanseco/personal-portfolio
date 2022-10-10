@@ -1,0 +1,103 @@
+@use '../../constants/colors' as color;
+@use '../../constants/sizes' as size;
+
+.animation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  min-width: 100px;
+  height: 100vh;
+  color: color.$txtLow;
+
+  @media (min-width: size.$md) {
+    padding: 0 7rem;
+  }
+
+  &__container {
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  &__intro {
+    margin: 1rem 0;
+    padding: 0;
+    color: color.$txtHigh;
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: 2px;
+
+    @media (min-width: size.$md) {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__name {
+    margin: 0;
+    padding: 0;
+    color: color.$txtMed;
+    font-size: 2.5rem;
+
+    @media (min-width: size.$md) {
+      font-size: 3rem;
+    }
+
+    @media (min-width: size.$lg) {
+      font-size: 3.5rem;
+    }
+  }
+
+  &__char {
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
+
+    @media (min-width: size.$md) {
+      font-size: 2.5rem;
+    }
+
+    @media (min-width: size.$lg) {
+      font-size: 3rem;
+    }
+  }
+
+  &__desc {
+    margin: 1rem 0;
+    padding: 0;
+    font-size: 1rem;
+    line-height: 1.5rem;
+
+    @media (min-width: size.$md) {
+      width: 80%;
+      font-size: 1.2rem;
+      line-height: 2rem;
+    }
+
+    @media (min-width: size.$lg) {
+      width: 60%;
+    }
+  }
+
+  &__button {
+    transition: background-color 400ms ease-in-out;
+    cursor: pointer;
+    margin: 1rem 0;
+    border: color.$txtHigh 1px solid;
+    border-radius: 5px;
+    background-color: color.$bg;
+    padding: 1rem;
+    width: fit-content;
+    font-size: 0.8rem;
+    font-family: monospace;
+
+    a {
+      color: color.$txtHigh;
+      text-decoration: none;
+    }
+
+    &:hover {
+      background-color: color.$btnHover;
+    }
+  }
+}
