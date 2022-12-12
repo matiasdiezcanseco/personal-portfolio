@@ -56,7 +56,7 @@ const Greet: React.FC = () => {
         <h2 className="animation__char">desarrollador web</h2>
         <p className="animation__desc">
           Soy un ingeniero enfocado en construir grandes experiencias digitales. En la actualidad me
-          dedico principalmente a construir productos con React, NodeJS y arquitectura cloud.
+          dedico principalmente a construir productos con React, NodeJS y AWS.
         </p>
         <button className="animation__button" onClick={(e) => handleNavigation(e, 'projects')}>
           <a href="#projects">¡Revisa mis proyectos!</a>
