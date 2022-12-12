@@ -21,7 +21,8 @@
     margin: 0 1rem;
     background-color: color.$txtLow;
     height: 1px;
-    @media (min-width: size.$xs) {
+
+    @media (min-width: size.$sm) {
       display: block;
     }
   }
@@ -30,8 +31,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0;
     margin-bottom: 2rem;
+    margin: 0 auto;
     padding: 0;
     color: color.$txtMed;
     font-size: 2.2rem;

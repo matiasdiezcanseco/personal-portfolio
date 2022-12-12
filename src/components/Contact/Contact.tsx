@@ -40,9 +40,8 @@ const Contact: React.FC = () => {
       </div>
       <div className="contact__content">
         <p className="contact__desc">
-          En estos momentos estoy disponible a nuevas oportunidades. Incluso si
-          solo es una pregunta o quieres saber más de mí, siempre estoy atento a
-          mis correos.
+          En estos momentos estoy disponible a nuevas oportunidades. Incluso si solo es una pregunta
+          o quieres saber más de mí, siempre estoy atento a mis correos.
         </p>
         <form className="contact__form">
           <input

@@ -11,7 +11,7 @@ import './About.scss'
 const About: React.FC = () => {
   const [hoverRef, isHovered] = useHover()
   const tech = useRecoilValue(techlonogiesState)
-  const [usedTech] = useState(['React', 'Typescript', 'ExpressJS', 'Redux', 'Prisma', 'Firebase'])
+  const [usedTech] = useState(['React', 'Typescript', 'ExpressJS', 'AWS', 'Prisma', 'Firebase'])
 
   const variants = {
     hidden: { opacity: 0, y: 50 },
@@ -46,28 +46,13 @@ const About: React.FC = () => {
             ¡Hola! Mi nombre es Matías y me encanta crear aplicaciones web. Siempre he tenido un
             interés por las computadoras y mi pasión por el desarrollo web inició en el 2020,
             terminando la universidad. Desde ese momento no he dejado de aprender y desarrollar
-            proyectos personales.
+            proyectos.
           </p>
           <p>
-            Al día de hoy he creado múltiples proyectos, desde copiar interfaces de páginas
-            conocidas a modo de práctica hasta servicios digitales completamente automatizados. Mi
+            Al día de hoy he creado múltiples proyectos, desde recrear aplicaciones con ingeniería
+            inversa a modo de práctica hasta servicios digitales completamente automatizados. Mi
             principal objetivo es continuar creciendo como profesional al desarrollar aplicaciones
-            útiles y desafiantes.
-          </p>
-          <p>
-            También tengo un{' '}
-            <span
-              className="about__desc--link"
-              onClick={() =>
-                window.open('https://www.youtube.com/channel/UC6B4MjVVGutNx85ddFEUfIA')
-              }
-              onKeyUp={() =>
-                window.open('https://www.youtube.com/channel/UC6B4MjVVGutNx85ddFEUfIA')
-              }
-            >
-              canal de Youtube
-            </span>{' '}
-            donde doy mi opinión respecto a otro tema de mi pasion: criptomonedas.
+            modernas y desafiantes.
           </p>
           <p>Las principales tecnologías con las que trabajo en estos momentos son:</p>
           <div className="about__grid">
