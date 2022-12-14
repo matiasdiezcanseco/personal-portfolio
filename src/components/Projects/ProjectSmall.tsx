@@ -1,12 +1,10 @@
 import { find } from 'lodash'
 import Modal from 'react-modal'
-import ProjectModal from './ProjectModal'
 import { BsBoxArrowUpRight } from 'react-icons/bs'
 import { FiFolder, FiGithub } from 'react-icons/fi'
 import { motion } from 'framer-motion'
 import { techlonogiesState } from '../../store/state'
 import { useRecoilValue } from 'recoil'
-import { useState } from 'react'
 import './ProjectSmall.scss'
 
 import type { Project } from '../../store/state'
@@ -15,29 +13,6 @@ Modal.setAppElement('#modal')
 
 interface ProjectType {
   project: Project
-}
-
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    zIndex: 100,
-    background: '#26282c',
-    border: 'none',
-    padding: 0,
-    overflow: 'visible',
-    backgroundColor: '#26282c',
-    width: '90%',
-    maxWidth: '800px',
-  },
-  overlay: {
-    backgroundColor: 'rgba(30,30,30,0.7)',
-    zIndex: 99,
-  },
 }
 
 const ProjectSmall: React.FC<ProjectType> = ({ project }) => {
@@ -52,16 +27,6 @@ const ProjectSmall: React.FC<ProjectType> = ({ project }) => {
     return selTech?.url
   }
 
-  const [modalIsOpen, setModalIsOpen] = useState(false)
-
-  function openModal() {
-    setModalIsOpen(true)
-  }
-
-  function closeModal() {
-    setModalIsOpen(false)
-  }
-
   return (
     <>
       <motion.div
@@ -69,7 +34,6 @@ const ProjectSmall: React.FC<ProjectType> = ({ project }) => {
         whileHover="hover"
         transition={{ duration: 0.3 }}
         variants={variants}
-        onClick={openModal}
       >
         <div className="projectsmall__icons">
           <FiFolder size={30} />
@@ -111,15 +75,6 @@ const ProjectSmall: React.FC<ProjectType> = ({ project }) => {
           </ul>
         </div>
       </motion.div>
-      <Modal
-        closeTimeoutMS={500}
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Example Modal"
-      >
-        <ProjectModal project={project} close={closeModal} />
-      </Modal>
     </>
   )
 }

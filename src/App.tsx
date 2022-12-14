@@ -23,18 +23,14 @@ const App = () => {
 
   useEffect(() => {
     const exec = async () => {
-      const qProjects = "*[_type == 'projects']"
-      const res1: Project[] = await client.fetch(qProjects)
-      setProjects(res1)
+      const projects: Project[] = await client.fetch("*[_type == 'projects']")
+      setProjects(projects)
 
-      const qJobs = "*[_type == 'jobs']"
+      const jobs: Job[] = await client.fetch("*[_type == 'jobs']")
+      setJobs(jobs)
 
-      const res2: Job[] = await client.fetch(qJobs)
-      setJobs(res2)
-
-      const qTech = "*[_type == 'technologies']"
-      const res3: Technology[] = await client.fetch(qTech)
-      setTech(res3)
+      const technologies: Technology[] = await client.fetch("*[_type == 'technologies']")
+      setTech(technologies)
     }
 
     exec()
@@ -43,7 +39,7 @@ const App = () => {
   useEffect(() => {
     if (jobs.length > 0 && tech.length > 0 && projects.length > 0) {
       const timePassed = Date.now() - start
-      const timer = timePassed > 2000 ? 0 : 2000 - timePassed
+      const timer = timePassed > 1200 ? 0 : 1200 - timePassed
       setTimeout(() => {
         setIsLoading(false)
       }, timer)
