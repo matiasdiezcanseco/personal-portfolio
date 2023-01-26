@@ -1,18 +1,24 @@
-import Project from './small-project/ProjectSmall'
-import ProjectBig from './big-project/ProjectBig'
+import { useQuery } from '@tanstack/react-query'
+import { motion, useAnimation } from 'framer-motion'
 import { filter } from 'lodash'
 import { Fragment, useEffect } from 'react'
-import { motion, useAnimation } from 'framer-motion'
-import { projectsState } from '../../store/state'
 import { useInView } from 'react-intersection-observer'
-import { useRecoilValue } from 'recoil'
-import './Projects.scss'
+
 import { githubUrl } from '../../constants/links'
+import { getProjects } from '../../store/queries'
+import BigProject from './big-project/big-project'
+import './projects.scss'
+import SmallProject from './small-project/small-project'
 
 const Projects: React.FC = () => {
-  const projects = useRecoilValue(projectsState)
+  const { data: projects } = useQuery({
+    queryKey: ['projects'],
+    queryFn: getProjects,
+  })
+
   const featuredProjects = filter(projects, { featured: true })
   const nonFeaturedProjects = filter(projects, { featured: false })
+
   const variants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
@@ -43,7 +49,7 @@ const Projects: React.FC = () => {
         <div className="projects__featured">
           {featuredProjects.map((p, i) => (
             <Fragment key={p.name}>
-              <ProjectBig project={p} dir={i % 2 === 0 ? 'left' : 'right'} />
+              <BigProject project={p} dir={i % 2 === 0 ? 'left' : 'right'} />
               <br />
               <br />
             </Fragment>
@@ -62,7 +68,7 @@ const Projects: React.FC = () => {
 
         <div className="projects__list">
           {nonFeaturedProjects.map((p) => (
-            <Project key={p.name} project={p} />
+            <SmallProject key={p.name} project={p} />
           ))}
         </div>
       </div>

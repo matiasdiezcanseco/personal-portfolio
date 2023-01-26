@@ -1,15 +1,20 @@
-import JobComponent from './job/job'
-import JobMenu from './job-menu/job-menu'
-import { jobsState } from '../../store/state'
+import { useQuery } from '@tanstack/react-query'
 import { motion, useAnimation } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
-import { useRecoilValue } from 'recoil'
-import './Experience.scss'
+
+import { getJobs } from '../../store/queries'
+import './experience.scss'
+import JobMenu from './job-menu/job-menu'
+import JobComponent from './job/job'
 
 const Experience: React.FC = () => {
-  const jobs = useRecoilValue(jobsState)
-  const [selectedJobId, setSelectedJobNameId] = useState(jobs[0]._id)
+  const { data: jobs } = useQuery({
+    queryKey: ['jobs'],
+    queryFn: getJobs,
+  })
+
+  const [selectedJobId, setSelectedJobNameId] = useState(jobs ? jobs[0]._id : '')
 
   const variants = {
     hidden: { opacity: 0, y: 50 },
@@ -39,11 +44,12 @@ const Experience: React.FC = () => {
         <span className="experience__title--line"></span>
       </h1>
       <div className="experience__content">
-        <JobMenu jobs={jobs} selectedId={selectedJobId} onSelect={setSelectedJobNameId} />
-        {jobs.map((j) => {
-          if (j._id !== selectedJobId) return
-          return <JobComponent key={j._id} job={j} />
-        })}
+        {jobs && <JobMenu jobs={jobs} selectedId={selectedJobId} onSelect={setSelectedJobNameId} />}
+        {jobs &&
+          jobs.map((j) => {
+            if (j._id !== selectedJobId) return
+            return <JobComponent key={j._id} job={j} />
+          })}
       </div>
     </motion.section>
   )

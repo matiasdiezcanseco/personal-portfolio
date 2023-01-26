@@ -1,10 +1,10 @@
-import * as THREE from 'three'
+import { motion } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
 import NET from 'vanta/dist/vanta.net.min'
-import { motion } from 'framer-motion'
-import { useEffect, useRef, useState } from 'react'
-import './Greet.scss'
+
+import './greet.scss'
 
 const Greet: React.FC = () => {
   const [effect, setEffect] = useState()
@@ -32,7 +32,6 @@ const Greet: React.FC = () => {
           spacing: 25.0,
           color: '#4fe0b6',
           backgroundColor: '#202125',
-          THREE,
         })
       )
     }

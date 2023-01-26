@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 
 import Logo from '../../assets/logo'
-import './Loading.scss'
+import './loading.scss'
 
 const Loading: React.FC = () => {
   return (

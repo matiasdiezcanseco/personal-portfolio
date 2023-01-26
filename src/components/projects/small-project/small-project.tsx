@@ -1,13 +1,13 @@
+import { useQuery } from '@tanstack/react-query'
+import { motion } from 'framer-motion'
 import { find } from 'lodash'
-import Modal from 'react-modal'
 import { BsBoxArrowUpRight } from 'react-icons/bs'
 import { FiFolder, FiGithub } from 'react-icons/fi'
-import { motion } from 'framer-motion'
-import { techlonogiesState } from '../../../store/state'
-import { useRecoilValue } from 'recoil'
-import './ProjectSmall.scss'
+import Modal from 'react-modal'
 
-import type { Project } from '../../../store/state'
+import { Project } from '../../../store/client'
+import { getTechnologies } from '../../../store/queries'
+import './small-project.scss'
 
 Modal.setAppElement('#modal')
 
@@ -20,7 +20,10 @@ const ProjectSmall: React.FC<ProjectType> = ({ project }) => {
     hover: { y: -10 },
   }
 
-  const tech = useRecoilValue(techlonogiesState)
+  const { data: tech } = useQuery({
+    queryKey: ['technologies'],
+    queryFn: getTechnologies,
+  })
 
   const findUrl = (t: string) => {
     const selTech = find(tech, { name: t })

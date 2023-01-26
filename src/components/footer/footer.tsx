@@ -1,8 +1,9 @@
-import CV from '../../assets/cv.pdf'
 import { FiGithub, FiLinkedin } from 'react-icons/fi'
 import { IoDocumentOutline } from 'react-icons/io5'
-import './Footer.scss'
+
+import CV from '../../assets/cv.pdf'
 import { githubUrl, linkedinUrl } from '../../constants/links'
+import './footer.scss'
 
 const Footer: React.FC = () => {
   return (

@@ -1,12 +1,12 @@
+import { useQuery } from '@tanstack/react-query'
 import { find } from 'lodash'
 import { BsBoxArrowUpRight } from 'react-icons/bs'
 import { FiGithub } from 'react-icons/fi'
-import { useRecoilValue } from 'recoil'
 
 import useHover from '../../../hooks/use-hover'
-import { urlFor } from '../../../store/client'
-import { Project, techlonogiesState } from '../../../store/state'
-import './ProjectBig.scss'
+import { Project, urlFor } from '../../../store/client'
+import { getTechnologies } from '../../../store/queries'
+import './big-project.scss'
 
 interface ProjectType {
   project: Project
@@ -16,7 +16,11 @@ interface ProjectType {
 const ProjectBig: React.FC<ProjectType> = ({ project, dir }) => {
   const [ref, isHovered] = useHover()
   const imgUrl = urlFor(project.imageUrl).width(700).url()
-  const tech = useRecoilValue(techlonogiesState)
+
+  const { data: tech } = useQuery({
+    queryKey: ['technologies'],
+    queryFn: getTechnologies,
+  })
 
   const findUrl = (t: string) => {
     const selTech = find(tech, { name: t })

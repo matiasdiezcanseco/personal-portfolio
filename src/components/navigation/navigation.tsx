@@ -7,7 +7,7 @@ import Modal from 'react-modal'
 import CV from '../../assets/cv.pdf'
 import Logo from '../../assets/logo'
 import NavigationModal from '../navigation-modal/navigation-modal'
-import './Navigation.scss'
+import './navigation.scss'
 
 const customStyles = {
   content: {
