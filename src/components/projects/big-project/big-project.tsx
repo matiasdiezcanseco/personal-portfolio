@@ -1,10 +1,11 @@
-import useHover from '../../../hooks/useHover'
+import { find } from 'lodash'
 import { BsBoxArrowUpRight } from 'react-icons/bs'
 import { FiGithub } from 'react-icons/fi'
-import { find } from 'lodash'
-import { Project, techlonogiesState } from '../../../store/state'
-import { urlFor } from '../../../store/client'
 import { useRecoilValue } from 'recoil'
+
+import useHover from '../../../hooks/use-hover'
+import { urlFor } from '../../../store/client'
+import { Project, techlonogiesState } from '../../../store/state'
 import './ProjectBig.scss'
 
 interface ProjectType {

@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react'
 import { HiOutlineMenuAlt3 } from 'react-icons/hi'
 import Modal from 'react-modal'
 
-import Logo from '../../assets/-logo'
 import CV from '../../assets/cv.pdf'
+import Logo from '../../assets/logo'
 import NavigationModal from '../navigation-modal/navigation-modal'
 import './Navigation.scss'
 
