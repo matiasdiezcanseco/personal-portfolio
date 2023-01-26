@@ -1,11 +1,12 @@
-import CV from '../../assets/cv.pdf'
-import Logo from '../../assets/Logo'
-import Modal from 'react-modal'
-import NavigationModal from './NavigationModal'
 import useScrollPosition from '@react-hook/window-scroll'
 import { AnimatePresence, motion } from 'framer-motion'
-import { HiOutlineMenuAlt3 } from 'react-icons/hi'
 import { useEffect, useState } from 'react'
+import { HiOutlineMenuAlt3 } from 'react-icons/hi'
+import Modal from 'react-modal'
+
+import Logo from '../../assets/-logo'
+import CV from '../../assets/cv.pdf'
+import NavigationModal from '../navigation-modal/navigation-modal'
 import './Navigation.scss'
 
 const customStyles = {
