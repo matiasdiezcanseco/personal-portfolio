@@ -3,11 +3,11 @@ import Modal from 'react-modal'
 import { BsBoxArrowUpRight } from 'react-icons/bs'
 import { FiFolder, FiGithub } from 'react-icons/fi'
 import { motion } from 'framer-motion'
-import { techlonogiesState } from '../../store/state'
+import { techlonogiesState } from '../../../store/state'
 import { useRecoilValue } from 'recoil'
 import './ProjectSmall.scss'
 
-import type { Project } from '../../store/state'
+import type { Project } from '../../../store/state'
 
 Modal.setAppElement('#modal')
 

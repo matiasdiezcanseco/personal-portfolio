@@ -1,5 +1,5 @@
-import Project from './ProjectSmall'
-import ProjectBig from './ProjectBig'
+import Project from './small-project/ProjectSmall'
+import ProjectBig from './big-project/ProjectBig'
 import { filter } from 'lodash'
 import { Fragment, useEffect } from 'react'
 import { motion, useAnimation } from 'framer-motion'

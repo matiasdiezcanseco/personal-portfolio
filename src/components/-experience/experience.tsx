@@ -1,5 +1,5 @@
-import JobComponent from './Job'
-import JobMenu from './JobMenu'
+import JobComponent from './job/job'
+import JobMenu from './job-menu/JobMenu'
 import { jobsState } from '../../store/state'
 import { motion, useAnimation } from 'framer-motion'
 import { useEffect, useState } from 'react'
