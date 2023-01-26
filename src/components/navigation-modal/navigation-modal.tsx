@@ -1,7 +1,8 @@
-import CV from '../../assets/cv.pdf'
-import { MdClose } from 'react-icons/md'
 import { motion } from 'framer-motion'
-import './NavigationModal.scss'
+import { MdClose } from 'react-icons/md'
+
+import CV from '../../assets/cv.pdf'
+import './navigation-modal.scss'
 
 interface NavigationModalType {
   close: () => void

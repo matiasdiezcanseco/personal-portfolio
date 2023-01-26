@@ -1,7 +1,8 @@
 import dayjs from 'dayjs'
 import { motion } from 'framer-motion'
-import './Job.scss'
-import type { Job } from '../../../store/state'
+
+import { Job } from '../../../store/client'
+import './job.scss'
 
 interface JobType {
   job: Job

@@ -1,5 +1,5 @@
-import { Job } from '../../../store/state'
-import './JobMenu.scss'
+import { Job } from '../../../store/client'
+import './job-menu.scss'
 
 interface JobMenuType {
   jobs: Job[]

@@ -1,17 +1,22 @@
+import { useQuery } from '@tanstack/react-query'
 import { motion, useAnimation } from 'framer-motion'
 import { find } from 'lodash'
 import { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
-import { useRecoilValue } from 'recoil'
 
 import myPic from '../../assets/me.png'
 import useHover from '../../hooks/use-hover'
-import { techlonogiesState } from '../../store/state'
-import './About.scss'
+import { getTechnologies } from '../../store/queries'
+import './about.scss'
 
 const About: React.FC = () => {
   const [hoverRef, isHovered] = useHover()
-  const tech = useRecoilValue(techlonogiesState)
+
+  const { data: tech } = useQuery({
+    queryKey: ['technologies'],
+    queryFn: getTechnologies,
+  })
+
   const [usedTech] = useState(['React', 'Typescript', 'ExpressJS', 'AWS', 'Prisma', 'Firebase'])
 
   const variants = {

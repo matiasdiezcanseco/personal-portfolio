@@ -1,7 +1,8 @@
 import { motion, useAnimation } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
-import './Contact.scss'
+
+import './contact.scss'
 
 const Contact: React.FC = () => {
   const variants = {
