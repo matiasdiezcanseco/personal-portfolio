@@ -1,11 +1,12 @@
-import myPic from '../../assets/me.png'
-import useHover from '../../hooks/useHover'
-import { find } from 'lodash'
 import { motion, useAnimation } from 'framer-motion'
-import { techlonogiesState } from '../../store/state'
+import { find } from 'lodash'
 import { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { useRecoilValue } from 'recoil'
+
+import myPic from '../../assets/me.png'
+import useHover from '../../hooks/use-hover'
+import { techlonogiesState } from '../../store/state'
 import './About.scss'
 
 const About: React.FC = () => {

@@ -1,5 +1,7 @@
-import useHover from '../hooks/useHover'
 import { motion } from 'framer-motion'
+
+import useHover from '../hooks/use-hover'
+
 interface LogoType {
   size: string
   animated?: boolean
