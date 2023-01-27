@@ -1,0 +1,49 @@
+@use '../../constants/colors' as color;
+@use '../../constants/sizes' as size;
+
+.projects {
+  &__featured {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__subtitle {
+    margin: 4rem 0;
+    margin-top: 4rem;
+    text-align: center;
+    h3 {
+      margin: 0;
+      color: color.$txtMed;
+      font-size: 1.6rem;
+    }
+
+    h4 {
+      transition: all 300ms ease-in-out;
+      cursor: pointer;
+      margin: 0;
+      color: color.$txtHigh;
+      font-weight: 400;
+      font-size: 0.9rem;
+      text-decoration-color: transparent;
+
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color: color.$txtHigh;
+      }
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 10px;
+
+    @media (min-width: size.$md) {
+      grid-template-columns: 50% 50%;
+    }
+
+    @media (min-width: size.$lg) {
+      grid-template-columns: 33% 33% 33%;
+    }
+  }
+}
