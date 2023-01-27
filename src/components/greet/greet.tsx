@@ -46,7 +46,7 @@ const Greet: React.FC = () => {
       <motion.div
         className="greet__container"
         id="home"
-        transition={{ duration: 0.3, delay: 1 }}
+        transition={{ duration: 0.3, delay: 0 }}
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
       >

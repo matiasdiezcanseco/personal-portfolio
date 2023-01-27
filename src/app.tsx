@@ -11,7 +11,7 @@ import Greet from './components/greet/greet'
 import Loading from './components/loading/loading'
 import Navigation from './components/navigation/navigation'
 import Projects from './components/projects/projects'
-import { getJobs, getProjects, getTechnologies } from './store/queries'
+import { getCertificates, getJobs, getProjects, getTechnologies } from './store/queries'
 
 const App = () => {
   const { isLoading: isLoadingJobs } = useQuery({
@@ -27,9 +27,14 @@ const App = () => {
     queryFn: getTechnologies,
   })
 
+  const { isLoading: isLoadingCertificates } = useQuery({
+    queryKey: ['certificates'],
+    queryFn: getCertificates,
+  })
+
   const isLoading = useMemo(() => {
-    return isLoadingJobs || isLoadingProjects || isLoadingTechnologies
-  }, [isLoadingJobs, isLoadingProjects, isLoadingTechnologies])
+    return isLoadingJobs || isLoadingProjects || isLoadingTechnologies || isLoadingCertificates
+  }, [isLoadingJobs, isLoadingProjects, isLoadingTechnologies, isLoadingCertificates])
 
   return (
     <>

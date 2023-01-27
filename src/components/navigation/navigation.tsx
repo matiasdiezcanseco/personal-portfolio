@@ -111,10 +111,20 @@ const Navigation: React.FC = () => {
                 <li className="navigation__item">
                   <a
                     className="navigation__tag"
+                    href="#certifications"
+                    onClick={(e) => handleNavigation(e, 'certifications')}
+                  >
+                    <span className="navigation__tag--active">04. </span>
+                    Certificaciones
+                  </a>
+                </li>
+                <li className="navigation__item">
+                  <a
+                    className="navigation__tag"
                     href="#contact"
                     onClick={(e) => handleNavigation(e, 'contact')}
                   >
-                    <span className="navigation__tag--active">04. </span>
+                    <span className="navigation__tag--active">05. </span>
                     Contacto
                   </a>
                 </li>
