@@ -1,4 +1,4 @@
-import { Job, Project, Technology, client } from './client'
+import { Certificate, Job, Project, Technology, client } from './client'
 
 export const getProjects = async () => {
   const projects = await client.fetch("*[_type == 'projects']")
@@ -13,4 +13,9 @@ export const getJobs = async () => {
 export const getTechnologies = async () => {
   const tech = await client.fetch("*[_type == 'technologies']")
   return tech as Technology[]
+}
+
+export const getCertificates = async () => {
+  const tech = await client.fetch("*[_type == 'certificates']")
+  return tech as Certificate[]
 }

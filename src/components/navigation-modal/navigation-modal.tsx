@@ -46,6 +46,12 @@ const NavigationModal: React.FC<NavigationModalType> = ({ close }) => {
         </li>
         <li className="navmodal__button">
           04.
+          <a href="#certifications" onClick={(e) => handleNavigation(e, 'certifications')}>
+            Certificaciones
+          </a>
+        </li>
+        <li className="navmodal__button">
+          05.
           <a href="#contact" onClick={(e) => handleNavigation(e, 'contact')}>
             Contacto
           </a>
