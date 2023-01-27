@@ -12,3 +12,53 @@ export const client = sanityClient({
 const builder = imageUrlBuilder(client)
 
 export const urlFor = (source: any) => builder.image(source)
+
+
+interface Metadata {
+  _createdAt: string
+  _type: string
+  _updatedAt: string
+  _id: string
+  _rev: string
+}
+
+export interface Project extends Metadata {
+  name: string
+  description: string
+  imageUrl: string
+  tags: string[]
+  featured: boolean
+  gitUrl: string
+  prodUrl: string
+  
+}
+
+export interface Job extends Metadata {
+  name: string
+  company: string
+  companyUrl: string
+  initialDate: string
+  finalDate: string
+  active: boolean
+  description: string
+  imgUrl: string
+  tags: string[]
+  responsabilities: string[]
+  
+}
+
+export interface Technology extends Metadata {
+  name: string
+  description: string
+  url: string
+  imageUrl: string
+  
+}
+
+export interface Certificate extends Metadata {
+  name: string
+  description: string
+  courseUrl: string
+  certUrl: string
+ 
+}

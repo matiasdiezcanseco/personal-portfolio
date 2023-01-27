@@ -1,0 +1,33 @@
+@use '../../constants/colors' as color;
+@use '../../constants/sizes' as size;
+
+.section-title {
+  &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    margin-bottom: 2rem;
+    padding: 0;
+    width: 100%;
+    color: color.$txtMed;
+    font-size: 2.2rem;
+    text-align: center;
+    @media (min-width: size.$md) {
+      flex-direction: row;
+      align-items: flex-end;
+    }
+
+    &--number {
+      color: color.$txtHigh;
+      font-size: 1.8rem;
+      @media (min-width: size.$md) {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &__content {
+    padding: 5rem 0;
+  }
+}

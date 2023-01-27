@@ -1,0 +1,44 @@
+@use '../../../constants/colors' as color;
+@use '../../../constants/sizes' as size;
+
+.certificate {
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    h4 {
+      margin: 0;
+      a {
+        color: color.$txtMed;
+        font-size: 1.3rem;
+        text-decoration: none;
+
+        &:hover {
+          transition: all 300ms ease-in-out;
+          color: color.$txtHigh;
+        }
+      }
+    }
+  }
+
+  &__icons {
+    > * + * {
+      margin-left: 0.8rem;
+    }
+
+    &__icon {
+      transition: all 300ms ease-in-out;
+      cursor: pointer;
+      color: color.$txtHigh;
+      &:hover {
+        transform: translateY(-3px);
+      }
+    }
+  }
+
+  &__description {
+    font-size: 1rem;
+    line-height: 1.6rem;
+  }
+}

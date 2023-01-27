@@ -1,0 +1,14 @@
+@use '../../constants/colors' as color;
+@use '../../constants/sizes' as size;
+
+.experience {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 0;
+
+    @media (min-width: size.$md) {
+      flex-direction: row;
+    }
+  }
+}
