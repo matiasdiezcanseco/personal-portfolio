@@ -2,6 +2,7 @@ import { motion, useAnimation } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 
+import SectionTitle from '../section-title/section-title'
 import './contact.scss'
 
 const Contact: React.FC = () => {
@@ -32,12 +33,8 @@ const Contact: React.FC = () => {
       animate={controls}
       transition={{ duration: 0.4 }}
     >
-      <div className="contact__header">
-        <div className="contact__line"></div>
-        <h1 className="contact__title">
-          <span className="contact__title--number">04.</span> Contáctame
-        </h1>
-        <div className="contact__line"></div>
+      <div className="contact__title">
+        <SectionTitle numeration="05" title="Contáctame" />
       </div>
       <div className="contact__content">
         <p className="contact__desc">

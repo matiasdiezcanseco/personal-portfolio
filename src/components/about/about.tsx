@@ -7,6 +7,7 @@ import { useInView } from 'react-intersection-observer'
 import myPic from '../../assets/me.png'
 import useHover from '../../hooks/use-hover'
 import { getTechnologies } from '../../store/queries'
+import SectionTitle from '../section-title/section-title'
 import './about.scss'
 
 const About: React.FC = () => {
@@ -42,10 +43,8 @@ const About: React.FC = () => {
       animate={controls}
       ref={ref}
     >
-      <h1 className="about__title">
-        <span className="about__title--number">01. </span>Sobre Mi
-        <span className="about__title--line"></span>
-      </h1>
+      <SectionTitle numeration="01" title="Sobre Mi" />
+
       <div className="about__content">
         <div className="about__desc">
           <p>

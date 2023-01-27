@@ -3,6 +3,7 @@ import { useMemo } from 'react'
 
 import './app.scss'
 import About from './components/about/about'
+import Certifications from './components/certifications/certifications'
 import Contact from './components/contact/contact'
 import Experience from './components/experience/experience'
 import Footer from './components/footer/footer'
@@ -35,15 +36,18 @@ const App = () => {
       {isLoading ? (
         <Loading />
       ) : (
-        <div className="app">
+        <>
           <Navigation />
           <Greet />
-          <About />
-          <Experience />
-          <Projects />
-          <Contact />
-          <Footer />
-        </div>
+          <div className="app">
+            <About />
+            <Experience />
+            <Projects />
+            <Certifications />
+            <Contact />
+            <Footer />
+          </div>
+        </>
       )}
     </>
   )
