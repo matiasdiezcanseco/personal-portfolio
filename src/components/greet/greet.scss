@@ -1,16 +1,18 @@
 @use '../../constants/colors' as color;
 @use '../../constants/sizes' as size;
 
-.animation {
+.greet {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 2rem;
-  min-width: 100px;
+
+  padding: 0 1rem;
+  width: 100%;
+  max-width: none !important;
+
   height: 100vh;
   color: color.$txtLow;
-
   @media (min-width: size.$md) {
     padding: 0 7rem;
   }

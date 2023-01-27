@@ -6,6 +6,7 @@ import { useInView } from 'react-intersection-observer'
 
 import { githubUrl } from '../../constants/links'
 import { getProjects } from '../../store/queries'
+import SectionTitle from '../section-title/section-title'
 import BigProject from './big-project/big-project'
 import './projects.scss'
 import SmallProject from './small-project/small-project'
@@ -41,10 +42,7 @@ const Projects: React.FC = () => {
       animate={controls}
       transition={{ duration: 0.4 }}
     >
-      <h1 className="projects__title">
-        <span className="projects__title--number">03.</span> Proyectos
-        <span className="projects__title--line"></span>
-      </h1>
+      <SectionTitle numeration="03" title="Proyectos" />
       <div className="projects__content">
         <div className="projects__featured">
           {featuredProjects.map((p, i) => (
@@ -56,14 +54,14 @@ const Projects: React.FC = () => {
           ))}
         </div>
         <div className="projects__subtitle">
-          <h2>Otros Proyectos</h2>
-          <h3
+          <h3>Otros Proyectos</h3>
+          <h4
             className="projects__subtitle"
             onClick={() => window.open(githubUrl)}
             onKeyUp={() => window.open(githubUrl)}
           >
             Visita el repositorio
-          </h3>
+          </h4>
         </div>
 
         <div className="projects__list">

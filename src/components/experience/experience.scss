@@ -2,45 +2,6 @@
 @use '../../constants/sizes' as size;
 
 .experience {
-  margin: 0 auto;
-  margin-bottom: 6rem;
-  padding: 0 2rem;
-  max-width: 1200px;
-  @media (min-width: size.$md) {
-    padding: 0 7rem;
-  }
-
-  &__title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    margin-left: 1rem;
-    padding: 0;
-    color: color.$txtMed;
-    font-size: 2.2rem;
-
-    @media (min-width: size.$md) {
-      flex-direction: row;
-      align-items: flex-end;
-    }
-
-    &--number {
-      color: color.$txtHigh;
-      font-size: 1.8rem;
-
-      @media (min-width: size.$md) {
-        margin-right: 1rem;
-      }
-    }
-    &--line {
-      flex-grow: 1;
-      align-self: center;
-      margin-left: 1rem;
-      border-bottom: 1px solid color.$txtLow;
-    }
-  }
-
   &__content {
     display: flex;
     flex-direction: column;

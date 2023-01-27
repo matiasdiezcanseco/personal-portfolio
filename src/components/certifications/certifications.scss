@@ -1,0 +1,8 @@
+@use '../../constants/colors' as color;
+@use '../../constants/sizes' as size;
+
+.certifications {
+  &__content {
+    padding: 5rem 0;
+  }
+}

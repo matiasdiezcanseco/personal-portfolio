@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 
 import { getJobs } from '../../store/queries'
+import SectionTitle from '../section-title/section-title'
 import './experience.scss'
 import JobMenu from './job-menu/job-menu'
 import JobComponent from './job/job'
@@ -39,10 +40,7 @@ const Experience: React.FC = () => {
       animate={controls}
       transition={{ duration: 0.4 }}
     >
-      <h1 className="experience__title">
-        <span className="experience__title--number">02.</span>Experiencia
-        <span className="experience__title--line"></span>
-      </h1>
+      <SectionTitle numeration="02" title="Experiencia" />
       <div className="experience__content">
         {jobs && <JobMenu jobs={jobs} selectedId={selectedJobId} onSelect={setSelectedJobNameId} />}
         {jobs &&

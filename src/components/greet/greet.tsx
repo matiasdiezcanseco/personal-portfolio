@@ -42,22 +42,22 @@ const Greet: React.FC = () => {
   }, [effect])
 
   return (
-    <section className="animation" ref={ref}>
+    <section className="greet" ref={ref}>
       <motion.div
-        className="animation__container"
+        className="greet__container"
         id="home"
         transition={{ duration: 0.3, delay: 1 }}
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
       >
-        <h3 className="animation__intro">Bienvenido, mi nombre es</h3>
-        <h1 className="animation__name">Matías Diez-Canseco, </h1>
-        <h2 className="animation__char">desarrollador web</h2>
-        <p className="animation__desc">
+        <h3 className="greet__intro">Bienvenido, mi nombre es</h3>
+        <h1 className="greet__name">Matías Diez-Canseco, </h1>
+        <h2 className="greet__char">desarrollador web</h2>
+        <p className="greet__desc">
           Soy un ingeniero enfocado en construir grandes experiencias digitales. En la actualidad me
           dedico principalmente a construir productos con React, NodeJS y AWS.
         </p>
-        <button className="animation__button" onClick={(e) => handleNavigation(e, 'projects')}>
+        <button className="greet__button" onClick={(e) => handleNavigation(e, 'projects')}>
           <a href="#projects">¡Revisa mis proyectos!</a>
         </button>
       </motion.div>

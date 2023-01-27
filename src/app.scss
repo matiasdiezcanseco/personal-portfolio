@@ -1,9 +1,25 @@
 @use './constants/colors' as color;
+@use './constants/sizes' as size;
 
 .app {
   display: flex;
   position: relative;
   flex-direction: column;
+
+  margin: 0 auto;
+
+  padding: 0 1rem;
+  max-width: 1200px;
+  @media (min-width: size.$md) {
+    padding: 0 7rem;
+  }
+
+  > * + * {
+    margin-top: 5rem;
+  }
+}
+
+#root {
   background-color: color.$bg;
   color: color.$txtLow;
   font-family: monospace;
