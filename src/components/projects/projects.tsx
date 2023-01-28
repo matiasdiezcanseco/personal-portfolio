@@ -13,7 +13,10 @@ import './projects.scss'
 import SmallProject from './small-project/small-project'
 
 const Projects: React.FC = () => {
-  const { t } = useTranslation(['projects'])
+  const {
+    t,
+    i18n: { language },
+  } = useTranslation(['projects'])
 
   const { data: projects } = useQuery({
     queryKey: ['projects'],
@@ -49,7 +52,7 @@ const Projects: React.FC = () => {
       <div className="projects__content">
         <div className="projects__featured">
           {featuredProjects.map((p, i) => (
-            <Fragment key={p.name}>
+            <Fragment key={p[language as 'en'].name}>
               <BigProject project={p} dir={i % 2 === 0 ? 'left' : 'right'} />
               <br />
               <br />
@@ -69,7 +72,7 @@ const Projects: React.FC = () => {
 
         <div className="projects__list">
           {nonFeaturedProjects.map((p) => (
-            <SmallProject key={p.name} project={p} />
+            <SmallProject key={p[language as 'en'].name} project={p} />
           ))}
         </div>
       </div>

@@ -14,7 +14,9 @@ const builder = imageUrlBuilder(client)
 export const urlFor = (source: any) => builder.image(source)
 
 
-interface Metadata {
+interface Metadata<T> {
+  en: T
+  es: T
   _createdAt: string
   _type: string
   _updatedAt: string
@@ -22,9 +24,11 @@ interface Metadata {
   _rev: string
 }
 
-export interface Project extends Metadata {
+export interface IProject extends Metadata<
+{
   name: string
   description: string
+} > {
   imageUrl: string
   tags: string[]
   featured: boolean
@@ -33,32 +37,33 @@ export interface Project extends Metadata {
   
 }
 
-export interface Job extends Metadata {
+export interface IJob extends Metadata<
+{ 
+  description: string 
+  responsabilities: string[] 
+} > {
   name: string
   company: string
   companyUrl: string
   initialDate: string
   finalDate: string
   active: boolean
-  description: string
   imgUrl: string
   tags: string[]
-  responsabilities: string[]
-  
 }
 
-export interface Technology extends Metadata {
-  name: string
+export interface ITechnology extends Metadata<unknown> {
   description: string
+  name: string
   url: string
   imageUrl: string
-  
 }
 
-export interface Certificate extends Metadata {
+export interface ICertificate extends Metadata< 
+{
   name: string
   description: string
+} > {
   courseUrl: string
   certUrl: string
- 
 }
