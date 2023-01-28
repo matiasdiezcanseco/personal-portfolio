@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { motion, useAnimation } from 'framer-motion'
 import { useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useInView } from 'react-intersection-observer'
 
 import { getCertificates } from '../../store/queries'
@@ -9,6 +10,8 @@ import Certificate from './certificate/certificate'
 import './certifications.scss'
 
 const Certifications: React.FC = () => {
+  const { t } = useTranslation(['certifications'])
+
   const { data: certifications } = useQuery({
     queryKey: ['certificates'],
     queryFn: getCertificates,
@@ -36,7 +39,7 @@ const Certifications: React.FC = () => {
       animate={controls}
       transition={{ duration: 0.4 }}
     >
-      <SectionTitle numeration="04" title="Cursos y certificaciones" />
+      <SectionTitle numeration="04" title={t('Title')} />
       <div className="certifications__content">
         {certifications && certifications.map((cert) => <Certificate key={cert._id} {...cert} />)}
       </div>

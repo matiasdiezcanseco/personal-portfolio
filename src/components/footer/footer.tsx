@@ -1,14 +1,17 @@
+import { useTranslation } from 'react-i18next'
 import { FiGithub, FiLinkedin } from 'react-icons/fi'
 import { IoDocumentOutline } from 'react-icons/io5'
 
 import CV from '../../assets/cv.pdf'
-import { githubUrl, linkedinUrl } from '../../constants/links'
+import { githubUrl, linkedinUrl } from '../../utils/constants/links'
 import './footer.scss'
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation(['footer'])
+
   return (
     <div className="footer">
-      <p className="footer__p">Diseñado y programado por Matías Diez-Canseco</p>
+      <p className="footer__p">{t('Designed')}</p>
       <p
         className="footer__p hover"
         onClick={() => {

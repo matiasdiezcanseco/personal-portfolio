@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
 import NET from 'vanta/dist/vanta.net.min'
@@ -7,6 +8,8 @@ import NET from 'vanta/dist/vanta.net.min'
 import './greet.scss'
 
 const Greet: React.FC = () => {
+  const { t } = useTranslation(['greet'])
+
   const [effect, setEffect] = useState()
   const ref = useRef(null)
 
@@ -50,15 +53,12 @@ const Greet: React.FC = () => {
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
       >
-        <h3 className="greet__intro">Bienvenido, mi nombre es</h3>
-        <h1 className="greet__name">Matías Diez-Canseco, </h1>
-        <h2 className="greet__char">desarrollador web</h2>
-        <p className="greet__desc">
-          Soy un ingeniero enfocado en construir grandes experiencias digitales. En la actualidad me
-          dedico principalmente a construir productos con React, NodeJS y AWS.
-        </p>
+        <h3 className="greet__intro">{t('Welcome')}</h3>
+        <h1 className="greet__name">{t('Name')}</h1>
+        <h2 className="greet__char">{t('Job')}</h2>
+        <p className="greet__desc">{t('Description')}</p>
         <button className="greet__button" onClick={(e) => handleNavigation(e, 'projects')}>
-          <a href="#projects">¡Revisa mis proyectos!</a>
+          <a href="#projects">{t('Invitation')}</a>
         </button>
       </motion.div>
     </section>
