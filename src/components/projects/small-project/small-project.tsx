@@ -1,21 +1,23 @@
 import { useQuery } from '@tanstack/react-query'
 import { motion } from 'framer-motion'
 import { find } from 'lodash'
+import { useTranslation } from 'react-i18next'
 import { BsBoxArrowUpRight } from 'react-icons/bs'
 import { FiFolder, FiGithub } from 'react-icons/fi'
-import Modal from 'react-modal'
 
-import { Project } from '../../../store/client'
+import { IProject } from '../../../store/client'
 import { getTechnologies } from '../../../store/queries'
 import './small-project.scss'
 
-Modal.setAppElement('#modal')
-
 interface ProjectType {
-  project: Project
+  project: IProject
 }
 
 const ProjectSmall: React.FC<ProjectType> = ({ project }) => {
+  const {
+    i18n: { language },
+  } = useTranslation()
+
   const variants = {
     hover: { y: -10 },
   }
@@ -58,9 +60,12 @@ const ProjectSmall: React.FC<ProjectType> = ({ project }) => {
           </div>
         </div>
         <div className="projectsmall__content">
-          <h1 className="projectsmall__title">{project.name}</h1>
+          <h1 className="projectsmall__title">{project[language as 'en'].name}</h1>
           <p className="projectsmall__description">
-            {project.description.substring(0, Math.min(160, project.description.length)) + '...'}
+            {project[language as 'en'].description.substring(
+              0,
+              Math.min(160, project[language as 'en'].description.length)
+            ) + '...'}
           </p>
         </div>
         <div className="projectsmall__tags">
