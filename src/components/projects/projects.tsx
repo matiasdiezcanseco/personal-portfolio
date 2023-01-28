@@ -5,6 +5,7 @@ import { Fragment, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useInView } from 'react-intersection-observer'
 
+import useLanguage from '../../hooks/use-language'
 import { getProjects } from '../../store/queries'
 import { githubUrl } from '../../utils/constants/links'
 import SectionTitle from '../section-title/section-title'
@@ -13,10 +14,8 @@ import './projects.scss'
 import SmallProject from './small-project/small-project'
 
 const Projects: React.FC = () => {
-  const {
-    t,
-    i18n: { language },
-  } = useTranslation(['projects'])
+  const { t } = useTranslation(['projects'])
+  const { language } = useLanguage()
 
   const { data: projects } = useQuery({
     queryKey: ['projects'],

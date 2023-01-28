@@ -1,10 +1,10 @@
 import { useQuery } from '@tanstack/react-query'
 import { motion } from 'framer-motion'
 import { find } from 'lodash'
-import { useTranslation } from 'react-i18next'
 import { BsBoxArrowUpRight } from 'react-icons/bs'
 import { FiFolder, FiGithub } from 'react-icons/fi'
 
+import useLanguage from '../../../hooks/use-language'
 import { IProject } from '../../../store/client'
 import { getTechnologies } from '../../../store/queries'
 import './small-project.scss'
@@ -14,9 +14,7 @@ interface ProjectType {
 }
 
 const ProjectSmall: React.FC<ProjectType> = ({ project }) => {
-  const {
-    i18n: { language },
-  } = useTranslation()
+  const { language } = useLanguage()
 
   const variants = {
     hover: { y: -10 },
