@@ -15,6 +15,8 @@ const JobComponent: React.FC<JobType> = ({ job }) => {
     i18n: { language },
   } = useTranslation(['experience'])
 
+  console.log(language)
+
   const initDate = dayjs(job.initialDate).format('MMM YYYY')
   const finalDate = job.finalDate ? dayjs(job.finalDate).format('MMM YYYY') : t('Today')
 
