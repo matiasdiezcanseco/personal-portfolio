@@ -5,6 +5,7 @@ import { BsBoxArrowUpRight } from 'react-icons/bs'
 import { FiGithub } from 'react-icons/fi'
 
 import useHover from '../../../hooks/use-hover'
+import useLanguage from '../../../hooks/use-language'
 import { IProject, urlFor } from '../../../store/client'
 import { getTechnologies } from '../../../store/queries'
 import './big-project.scss'
@@ -15,10 +16,8 @@ interface ProjectType {
 }
 
 const ProjectBig: React.FC<ProjectType> = ({ project, dir }) => {
-  const {
-    t,
-    i18n: { language },
-  } = useTranslation(['projects'])
+  const { t } = useTranslation(['projects'])
+  const { language } = useLanguage()
 
   const [ref, isHovered] = useHover()
   const imgUrl = urlFor(project.imageUrl).width(700).url()

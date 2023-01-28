@@ -5,6 +5,7 @@ import { Fragment, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useInView } from 'react-intersection-observer'
 
+import useLanguage from '../../hooks/use-language'
 import { getProjects } from '../../store/queries'
 import { githubUrl } from '../../utils/constants/links'
 import SectionTitle from '../section-title/section-title'
@@ -13,10 +14,8 @@ import './projects.scss'
 import SmallProject from './small-project/small-project'
 
 const Projects: React.FC = () => {
-  const {
-    t,
-    i18n: { language },
-  } = useTranslation(['projects'])
+  const { t } = useTranslation(['projects'])
+  const { language } = useLanguage()
 
   const { data: projects } = useQuery({
     queryKey: ['projects'],
@@ -51,13 +50,14 @@ const Projects: React.FC = () => {
       <SectionTitle numeration="03" title={t('Title')} />
       <div className="projects__content">
         <div className="projects__featured">
-          {featuredProjects.map((p, i) => (
-            <Fragment key={p[language as 'en'].name}>
-              <BigProject project={p} dir={i % 2 === 0 ? 'left' : 'right'} />
-              <br />
-              <br />
-            </Fragment>
-          ))}
+          {featuredProjects.length > 0 &&
+            featuredProjects.map((p, i) => (
+              <Fragment key={p[language as 'en'].name}>
+                <BigProject project={p} dir={i % 2 === 0 ? 'left' : 'right'} />
+                <br />
+                <br />
+              </Fragment>
+            ))}
         </div>
         <div className="projects__subtitle">
           <h3>{t('Other')}</h3>
@@ -71,9 +71,10 @@ const Projects: React.FC = () => {
         </div>
 
         <div className="projects__list">
-          {nonFeaturedProjects.map((p) => (
-            <SmallProject key={p[language as 'en'].name} project={p} />
-          ))}
+          {nonFeaturedProjects.length > 0 &&
+            nonFeaturedProjects.map((p) => (
+              <SmallProject key={p[language as 'en'].name} project={p} />
+            ))}
         </div>
       </div>
     </motion.section>

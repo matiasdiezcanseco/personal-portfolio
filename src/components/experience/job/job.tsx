@@ -2,6 +2,7 @@ import dayjs from 'dayjs'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 
+import useLanguage from '../../../hooks/use-language'
 import { IJob } from '../../../store/client'
 import './job.scss'
 
@@ -10,10 +11,8 @@ interface JobType {
 }
 
 const JobComponent: React.FC<JobType> = ({ job }) => {
-  const {
-    t,
-    i18n: { language },
-  } = useTranslation(['experience'])
+  const { t } = useTranslation(['experience'])
+  const { language } = useLanguage()
 
   const initDate = dayjs(job.initialDate).format('MMM YYYY')
   const finalDate = job.finalDate ? dayjs(job.finalDate).format('MMM YYYY') : t('Today')
