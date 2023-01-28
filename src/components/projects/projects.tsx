@@ -2,16 +2,19 @@ import { useQuery } from '@tanstack/react-query'
 import { motion, useAnimation } from 'framer-motion'
 import { filter } from 'lodash'
 import { Fragment, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useInView } from 'react-intersection-observer'
 
-import { githubUrl } from '../../constants/links'
 import { getProjects } from '../../store/queries'
+import { githubUrl } from '../../utils/constants/links'
 import SectionTitle from '../section-title/section-title'
 import BigProject from './big-project/big-project'
 import './projects.scss'
 import SmallProject from './small-project/small-project'
 
 const Projects: React.FC = () => {
+  const { t } = useTranslation(['projects'])
+
   const { data: projects } = useQuery({
     queryKey: ['projects'],
     queryFn: getProjects,
@@ -42,7 +45,7 @@ const Projects: React.FC = () => {
       animate={controls}
       transition={{ duration: 0.4 }}
     >
-      <SectionTitle numeration="03" title="Proyectos" />
+      <SectionTitle numeration="03" title={t('Title')} />
       <div className="projects__content">
         <div className="projects__featured">
           {featuredProjects.map((p, i) => (
@@ -54,13 +57,13 @@ const Projects: React.FC = () => {
           ))}
         </div>
         <div className="projects__subtitle">
-          <h3>Otros Proyectos</h3>
+          <h3>{t('Other')}</h3>
           <h4
             className="projects__subtitle"
             onClick={() => window.open(githubUrl)}
             onKeyUp={() => window.open(githubUrl)}
           >
-            Visita el repositorio
+            {t('Visit')}
           </h4>
         </div>
 

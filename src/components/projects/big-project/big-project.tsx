@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import { find } from 'lodash'
+import { useTranslation } from 'react-i18next'
 import { BsBoxArrowUpRight } from 'react-icons/bs'
 import { FiGithub } from 'react-icons/fi'
 
@@ -14,6 +15,8 @@ interface ProjectType {
 }
 
 const ProjectBig: React.FC<ProjectType> = ({ project, dir }) => {
+  const { t } = useTranslation(['projects'])
+
   const [ref, isHovered] = useHover()
   const imgUrl = urlFor(project.imageUrl).width(700).url()
 
@@ -43,8 +46,8 @@ const ProjectBig: React.FC<ProjectType> = ({ project, dir }) => {
             </a>
           </div>
           <div className="projectbig__title projectbig__title--right">
-            {project.featured && <h2>Projecto Destacado</h2>}
-            {!project.featured && <h2>Nombre del Projecto</h2>}
+            {project.featured && <h2>{t('Highlighted')}</h2>}
+            {!project.featured && <h2>{t('Name')}</h2>}
             <h1>{project.name}</h1>
           </div>
         </div>
@@ -70,7 +73,7 @@ const ProjectBig: React.FC<ProjectType> = ({ project, dir }) => {
               {project.description}
             </p>
           </div>
-          <p className="projectbig__tech projectbig__tech--right"> Tecnologias Usadas:</p>
+          <p className="projectbig__tech projectbig__tech--right"> {t('Technologies')}</p>
           <ul className="projectbig__list projectbig__list--right">
             {project.tags.map((t) => {
               const url = findUrl(t)
@@ -91,8 +94,8 @@ const ProjectBig: React.FC<ProjectType> = ({ project, dir }) => {
       <div className="projectbig">
         <div className="projectbig__header">
           <div className="projectbig__title">
-            {project.featured && <h2>Projecto Destacado</h2>}
-            {!project.featured && <h2>Nombre del Projecto</h2>}
+            {project.featured && <h2>{t('Highlighted')}</h2>}
+            {!project.featured && <h2>{t('Name')}</h2>}
             <h1>{project.name}</h1>
           </div>
           <div className="projectbig__nav">
@@ -124,7 +127,7 @@ const ProjectBig: React.FC<ProjectType> = ({ project, dir }) => {
           <div>
             <p className="projectbig__description">{project.description}</p>
           </div>
-          <p className="projectbig__tech"> Tecnologias Usadas:</p>
+          <p className="projectbig__tech">{t('Technologies')}</p>
           <ul className="projectbig__list">
             {project.tags.map((t) => {
               const url = findUrl(t)
