@@ -1,8 +1,8 @@
-import { Job } from '../../../store/client'
+import { IJob } from '../../../store/client'
 import './job-menu.scss'
 
 interface JobMenuType {
-  jobs: Job[]
+  jobs: IJob[]
   selectedId: string
   onSelect: (arg: string) => void
 }

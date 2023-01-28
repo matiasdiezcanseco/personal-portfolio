@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { useMemo } from 'react'
+import { Suspense, useMemo } from 'react'
 
 import './app.scss'
 import About from './components/about/about'
@@ -37,24 +37,26 @@ const App = () => {
   }, [isLoadingJobs, isLoadingProjects, isLoadingTechnologies, isLoadingCertificates])
 
   return (
-    <>
-      {isLoading ? (
-        <Loading />
-      ) : (
-        <>
-          <Navigation />
-          <Greet />
-          <div className="app">
-            <About />
-            <Experience />
-            <Projects />
-            <Certifications />
-            <Contact />
-            <Footer />
-          </div>
-        </>
-      )}
-    </>
+    <Suspense fallback={<Loading />}>
+      <>
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <>
+            <Navigation />
+            <Greet />
+            <div className="app">
+              <About />
+              <Experience />
+              <Projects />
+              <Certifications />
+              <Contact />
+              <Footer />
+            </div>
+          </>
+        )}
+      </>
+    </Suspense>
   )
 }
 

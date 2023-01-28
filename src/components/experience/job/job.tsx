@@ -1,16 +1,22 @@
 import dayjs from 'dayjs'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 
-import { Job } from '../../../store/client'
+import { IJob } from '../../../store/client'
 import './job.scss'
 
 interface JobType {
-  job: Job
+  job: IJob
 }
 
 const JobComponent: React.FC<JobType> = ({ job }) => {
+  const {
+    t,
+    i18n: { language },
+  } = useTranslation(['experience'])
+
   const initDate = dayjs(job.initialDate).format('MMM YYYY')
-  const finalDate = job.finalDate ? dayjs(job.finalDate).format('MMM YYYY') : 'Presente'
+  const finalDate = job.finalDate ? dayjs(job.finalDate).format('MMM YYYY') : t('Today')
 
   return (
     <motion.div
@@ -21,7 +27,7 @@ const JobComponent: React.FC<JobType> = ({ job }) => {
     >
       <div className="job__header">
         <h1>
-          {job.name} |{' '}
+          {job[language as 'en'].name} |{' '}
           <span
             className="job__company"
             onClick={() => window.open(job.companyUrl)}
@@ -34,9 +40,11 @@ const JobComponent: React.FC<JobType> = ({ job }) => {
           {initDate} - {finalDate}
         </h2>
       </div>
-      <p className="job__description">{job.description ? job.description : ''}</p>
+      <p className="job__description">
+        {job[language as 'en'].description ? job[language as 'en'].description : ''}
+      </p>
       <ul className="job__list">
-        {job.responsabilities.map((r) => (
+        {job[language as 'en'].responsabilities.map((r) => (
           <li key={r}>{r}</li>
         ))}
       </ul>

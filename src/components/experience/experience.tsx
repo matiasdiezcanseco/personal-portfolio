@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { motion, useAnimation } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useInView } from 'react-intersection-observer'
 
 import { getJobs } from '../../store/queries'
@@ -10,6 +11,8 @@ import JobMenu from './job-menu/job-menu'
 import JobComponent from './job/job'
 
 const Experience: React.FC = () => {
+  const { t } = useTranslation(['experience'])
+
   const { data: jobs } = useQuery({
     queryKey: ['jobs'],
     queryFn: getJobs,
@@ -40,7 +43,7 @@ const Experience: React.FC = () => {
       animate={controls}
       transition={{ duration: 0.4 }}
     >
-      <SectionTitle numeration="02" title="Experiencia" />
+      <SectionTitle numeration="02" title={t('Title')} />
       <div className="experience__content">
         {jobs && <JobMenu jobs={jobs} selectedId={selectedJobId} onSelect={setSelectedJobNameId} />}
         {jobs &&

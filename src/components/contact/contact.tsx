@@ -1,11 +1,14 @@
 import { motion, useAnimation } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useInView } from 'react-intersection-observer'
 
 import SectionTitle from '../section-title/section-title'
 import './contact.scss'
 
 const Contact: React.FC = () => {
+  const { t } = useTranslation(['contact'])
+
   const variants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
@@ -34,18 +37,15 @@ const Contact: React.FC = () => {
       transition={{ duration: 0.4 }}
     >
       <div className="contact__title">
-        <SectionTitle numeration="05" title="Contáctame" />
+        <SectionTitle numeration="05" title={t('Title')} />
       </div>
       <div className="contact__content">
-        <p className="contact__desc">
-          En estos momentos estoy disponible a nuevas oportunidades. Incluso si solo es una pregunta
-          o quieres saber más de mí, siempre estoy atento a mis correos.
-        </p>
+        <p className="contact__desc">{t('Description')}</p>
         <form className="contact__form">
           <input
             className="contact__input"
             type="text"
-            placeholder="Tu nombre"
+            placeholder={t('Name') as string}
             name="name"
             onChange={(e) => setName(e.target.value)}
           />
@@ -55,7 +55,7 @@ const Contact: React.FC = () => {
             id=""
             cols={30}
             rows={10}
-            placeholder="Escribe el contenido de tu correo aquí..."
+            placeholder={t('Body') as string}
             onChange={(e) => setBody(e.target.value)}
           ></textarea>
         </form>
@@ -69,7 +69,7 @@ const Contact: React.FC = () => {
             )
           }}
         >
-          Enviar
+          {t('Send')}
         </button>
       </div>
     </motion.section>

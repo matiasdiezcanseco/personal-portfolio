@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { MdClose } from 'react-icons/md'
 
 import CV from '../../assets/cv.pdf'
@@ -9,6 +10,8 @@ interface NavigationModalType {
 }
 
 const NavigationModal: React.FC<NavigationModalType> = ({ close }) => {
+  const { t } = useTranslation(['navigation'])
+
   const handleNavigation = (e: React.MouseEvent, tag: string) => {
     e.preventDefault()
     document.getElementById(tag)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -29,31 +32,31 @@ const NavigationModal: React.FC<NavigationModalType> = ({ close }) => {
         <li className="navmodal__button">
           01.
           <a href="#home" onClick={(e) => handleNavigation(e, 'about')}>
-            Sobre Mi
+            {t('About')}
           </a>
         </li>
         <li className="navmodal__button">
           02.
           <a href="#experience" onClick={(e) => handleNavigation(e, 'experience')}>
-            Experiencia
+            {t('Experience')}
           </a>
         </li>
         <li className="navmodal__button">
           03.
           <a href="#projects" onClick={(e) => handleNavigation(e, 'projects')}>
-            Proyectos
+            {t('Projects')}
           </a>
         </li>
         <li className="navmodal__button">
           04.
           <a href="#certifications" onClick={(e) => handleNavigation(e, 'certifications')}>
-            Certificaciones
+            {t('Certifications')}
           </a>
         </li>
         <li className="navmodal__button">
           05.
           <a href="#contact" onClick={(e) => handleNavigation(e, 'contact')}>
-            Contacto
+            {t('Contact')}
           </a>
         </li>
         <li
