@@ -1,13 +1,11 @@
-import { useTranslation } from 'react-i18next'
 import { TbCertificate } from 'react-icons/tb'
 
+import useLanguage from '../../../hooks/use-language'
 import type { ICertificate } from '../../../store/client'
 import './certificate.scss'
 
 const Certificate: React.FC<ICertificate> = (props) => {
-  const {
-    i18n: { language },
-  } = useTranslation()
+  const { language } = useLanguage()
 
   return (
     <div className="certificate">
