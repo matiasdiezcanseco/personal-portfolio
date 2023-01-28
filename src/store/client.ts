@@ -41,8 +41,8 @@ export interface IJob extends Metadata<
 { 
   description: string 
   responsabilities: string[] 
-} > {
   name: string
+} > {
   company: string
   companyUrl: string
   initialDate: string

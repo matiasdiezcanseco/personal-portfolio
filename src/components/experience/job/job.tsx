@@ -27,7 +27,7 @@ const JobComponent: React.FC<JobType> = ({ job }) => {
     >
       <div className="job__header">
         <h1>
-          {job.name} |{' '}
+          {job[language as 'en'].name} |{' '}
           <span
             className="job__company"
             onClick={() => window.open(job.companyUrl)}
