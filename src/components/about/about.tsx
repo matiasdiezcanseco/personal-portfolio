@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query'
 import { motion, useAnimation } from 'framer-motion'
 import { find } from 'lodash'
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useInView } from 'react-intersection-observer'
 
 import myPic from '../../assets/me.png'
@@ -11,6 +12,8 @@ import SectionTitle from '../section-title/section-title'
 import './about.scss'
 
 const About: React.FC = () => {
+  const { t } = useTranslation(['about'])
+
   const [hoverRef, isHovered] = useHover()
 
   const { data: tech } = useQuery({
@@ -43,23 +46,13 @@ const About: React.FC = () => {
       animate={controls}
       ref={ref}
     >
-      <SectionTitle numeration="01" title="Sobre Mi" />
+      <SectionTitle numeration="01" title={t('Title') as string} />
 
       <div className="about__content">
         <div className="about__desc">
-          <p>
-            ¡Hola! Mi nombre es Matías y me encanta crear aplicaciones web. Siempre he tenido un
-            interés por las computadoras y mi pasión por el desarrollo web inició en el 2020,
-            terminando la universidad. Desde ese momento no he dejado de aprender y desarrollar
-            proyectos.
-          </p>
-          <p>
-            Al día de hoy he creado múltiples proyectos, desde recrear aplicaciones con ingeniería
-            inversa a modo de práctica hasta servicios digitales completamente automatizados. Mi
-            principal objetivo es continuar creciendo como profesional al desarrollar aplicaciones
-            modernas y desafiantes.
-          </p>
-          <p>Las principales tecnologías con las que trabajo en estos momentos son:</p>
+          <p>{t('Introduction')}</p>
+          <p>{t('Path')}</p>
+          <p>{t('Technologies')}</p>
           <div className="about__grid">
             {usedTech.map((t) => {
               const tag = find(tech, { name: t })

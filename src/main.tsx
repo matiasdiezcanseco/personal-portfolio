@@ -5,6 +5,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 
 import App from './app'
 import './main.scss'
+import './utils/i18'
 
 const queryClient = new QueryClient()
 const container = document.getElementById('root') as HTMLElement

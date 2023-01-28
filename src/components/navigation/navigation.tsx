@@ -1,6 +1,7 @@
 import useScrollPosition from '@react-hook/window-scroll'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { HiOutlineMenuAlt3 } from 'react-icons/hi'
 import Modal from 'react-modal'
 
@@ -31,6 +32,8 @@ const customStyles = {
 }
 
 const Navigation: React.FC = () => {
+  const { t } = useTranslation(['navigation'])
+
   const [toggle, setToggle] = useState(true)
   const [prevY, setprevY] = useState(0)
   const scrollY = useScrollPosition(60)
@@ -85,7 +88,8 @@ const Navigation: React.FC = () => {
                     href="#about"
                     onClick={(e) => handleNavigation(e, 'about')}
                   >
-                    <span className="navigation__tag--active">01. </span>Sobre Mi
+                    <span className="navigation__tag--active">01. </span>
+                    {t('About')}
                   </a>
                 </li>
                 <li className="navigation__item">
@@ -95,7 +99,7 @@ const Navigation: React.FC = () => {
                     onClick={(e) => handleNavigation(e, 'experience')}
                   >
                     <span className="navigation__tag--active">02. </span>
-                    Experiencia
+                    {t('Experience')}
                   </a>
                 </li>
                 <li className="navigation__item">
@@ -105,7 +109,7 @@ const Navigation: React.FC = () => {
                     onClick={(e) => handleNavigation(e, 'projects')}
                   >
                     <span className="navigation__tag--active">03. </span>
-                    Proyectos
+                    {t('Projects')}
                   </a>
                 </li>
                 <li className="navigation__item">
@@ -115,7 +119,7 @@ const Navigation: React.FC = () => {
                     onClick={(e) => handleNavigation(e, 'certifications')}
                   >
                     <span className="navigation__tag--active">04. </span>
-                    Certificaciones
+                    {t('Certifications')}
                   </a>
                 </li>
                 <li className="navigation__item">
@@ -125,7 +129,7 @@ const Navigation: React.FC = () => {
                     onClick={(e) => handleNavigation(e, 'contact')}
                   >
                     <span className="navigation__tag--active">05. </span>
-                    Contacto
+                    {t('Contact')}
                   </a>
                 </li>
                 <li className="navigation__item navigation__item--active">
