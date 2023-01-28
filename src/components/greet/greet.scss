@@ -8,19 +8,18 @@
   align-items: center;
 
   width: 100%;
-  max-width: none !important;
 
   height: 100vh;
   color: color.$txtLow;
-
-  @media (min-width: size.$md) {
-    padding: 0 7rem;
-  }
 
   &__container {
     margin: 0 auto;
     padding: 1rem;
     max-width: 1200px;
+
+    @media (min-width: size.$md) {
+      padding: 0 7rem;
+    }
   }
 
   &__intro {
