@@ -51,13 +51,14 @@ const Projects: React.FC = () => {
       <SectionTitle numeration="03" title={t('Title')} />
       <div className="projects__content">
         <div className="projects__featured">
-          {featuredProjects.map((p, i) => (
-            <Fragment key={p[language as 'en'].name}>
-              <BigProject project={p} dir={i % 2 === 0 ? 'left' : 'right'} />
-              <br />
-              <br />
-            </Fragment>
-          ))}
+          {featuredProjects.length > 0 &&
+            featuredProjects.map((p, i) => (
+              <Fragment key={p[language as 'en'].name}>
+                <BigProject project={p} dir={i % 2 === 0 ? 'left' : 'right'} />
+                <br />
+                <br />
+              </Fragment>
+            ))}
         </div>
         <div className="projects__subtitle">
           <h3>{t('Other')}</h3>
@@ -71,9 +72,10 @@ const Projects: React.FC = () => {
         </div>
 
         <div className="projects__list">
-          {nonFeaturedProjects.map((p) => (
-            <SmallProject key={p[language as 'en'].name} project={p} />
-          ))}
+          {nonFeaturedProjects.length > 0 &&
+            nonFeaturedProjects.map((p) => (
+              <SmallProject key={p[language as 'en'].name} project={p} />
+            ))}
         </div>
       </div>
     </motion.section>
