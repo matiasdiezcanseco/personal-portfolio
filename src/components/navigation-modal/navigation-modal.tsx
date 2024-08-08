@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { MdClose } from 'react-icons/md'
 
-import CV from '../../assets/cv.pdf'
+import { cvUrl } from '../../utils/constants/links'
 import './navigation-modal.scss'
 
 interface NavigationModalType {
@@ -61,8 +61,8 @@ const NavigationModal: React.FC<NavigationModalType> = ({ close }) => {
         </li>
         <li
           className="navmodal__button navmodal__button--active"
-          onClick={() => window.open(CV)}
-          onKeyUp={() => window.open(CV)}
+          onClick={() => window.open(cvUrl)}
+          onKeyUp={() => window.open(cvUrl)}
         >
           CV
         </li>

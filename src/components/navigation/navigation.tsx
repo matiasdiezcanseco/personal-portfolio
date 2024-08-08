@@ -5,8 +5,8 @@ import { useTranslation } from 'react-i18next'
 import { HiOutlineMenuAlt3 } from 'react-icons/hi'
 import Modal from 'react-modal'
 
-import CV from '../../assets/cv.pdf'
 import Logo from '../../assets/logo'
+import { cvUrl } from '../../utils/constants/links'
 import NavigationModal from '../navigation-modal/navigation-modal'
 import './navigation.scss'
 
@@ -132,11 +132,11 @@ const Navigation: React.FC = () => {
                     {t('Contact')}
                   </a>
                 </li>
-                <li className="navigation__item navigation__item--active">
+                <li>
                   <a
-                    className="navigation__tag navigation__tag--active"
+                    className="navigation__item navigation__item--active navigation__tag navigation__tag--active"
                     target="_blank"
-                    href={CV}
+                    href={cvUrl}
                     rel="noreferrer"
                   >
                     CV

@@ -2,8 +2,7 @@ import { useTranslation } from 'react-i18next'
 import { FiGithub, FiLinkedin } from 'react-icons/fi'
 import { IoDocumentOutline } from 'react-icons/io5'
 
-import CV from '../../assets/cv.pdf'
-import { githubUrl, linkedinUrl } from '../../utils/constants/links'
+import { cvUrl, githubUrl, linkedinUrl } from '../../utils/constants/links'
 import './footer.scss'
 
 const Footer: React.FC = () => {
@@ -35,7 +34,7 @@ const Footer: React.FC = () => {
           </a>
         </li>
         <li>
-          <a target="_blank" href={CV} rel="noreferrer">
+          <a target="_blank" href={cvUrl} rel="noreferrer">
             <IoDocumentOutline size={18} />
           </a>
         </li>
