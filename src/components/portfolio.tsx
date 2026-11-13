@@ -12,6 +12,7 @@ import { Brand } from "@/components/brand";
 import { LanguageSwitch } from "@/components/language-switch";
 import { MobileNav } from "@/components/mobile-nav";
 import { SectionIndex } from "@/components/section-index";
+import { ScrollHeader } from "@/components/scroll-header";
 import { SelectedWork } from "@/components/selected-work";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -41,7 +42,8 @@ export function Portfolio({
       <a className="skip" href="#main">
         {c.ui.skip}
       </a>
-      <header id="top">
+      <div id="top" aria-hidden="true" />
+      <ScrollHeader>
         <div className="wrap top">
           <Link
             className="wordmark"
@@ -66,7 +68,7 @@ export function Portfolio({
             />
           </div>
         </div>
-      </header>
+      </ScrollHeader>
       <main id="main">
         <section className="hero wrap" aria-labelledby="name" data-enter>
           <p className="intro">{c.hero.intro}</p>

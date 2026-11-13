@@ -180,6 +180,16 @@
   align-items: center;
 }
 @media (max-width: 820px) {
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 15;
+    background: var(--bg);
+    transition: transform 0.2s ease;
+  }
+  .site-header[data-hidden="true"] {
+    transform: translateY(-100%);
+  }
   .top .desktop-nav {
     display: none;
   }
@@ -188,6 +198,11 @@
   }
   .header-tools {
     margin-left: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-header {
+    transition: none;
   }
 }
 @media (max-width: 480px) {

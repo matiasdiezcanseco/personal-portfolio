@@ -409,7 +409,7 @@ details .description {
   border-bottom: 1px solid var(--line);
   transition: transform 0.2s;
 }
-.project:first-of-type {
+#projects > .prose + .project {
   padding-top: 0;
 }
 a.project:hover {

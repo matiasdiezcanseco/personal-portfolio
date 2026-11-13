@@ -25,6 +25,9 @@ for (const [locale, content] of Object.entries({ en, es })) {
       await expect(menu).toBeFocused();
 
       for (const [id, label] of Object.entries(content.nav)) {
+        // Reveal the sticky menu as a reader scrolling back up would.
+        await page.evaluate(() => window.scrollBy(0, -120));
+        await expect(page.getByRole("banner")).toBeInViewport();
         await menu.click();
         const link = dialog.getByRole("link", { name: label, exact: true });
         if (width === 768) {

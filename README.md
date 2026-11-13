@@ -36,7 +36,7 @@ After deployment, check the root redirect for English and Spanish browser prefer
 
 - `src/content/en.json` and `src/content/es.json`: all portfolio copy and UI labels. Both files use the same structure.
 - `src/lib/site.ts`: canonical production domain, contact details, social links and CV path.
-- `src/components/portfolio.tsx`: server-rendered layout. Only the language switch, mobile sheet, section index and work accordion require client interaction.
+- `src/components/portfolio.tsx`: server-rendered layout. The scroll-aware mobile header, language switch, mobile sheet, section index and work accordion add client interaction.
 - `src/components/ui`: shadcn/ui Button, Badge, Accordion and Sheet, generated with the CLI and adapted for the approved design. The Sheet close label is localized.
 - `src/app/portfolio.css`: approved black portfolio layout; `implementation.css` adapts it to the React primitives; `globals.css` defines Tailwind/shadcn tokens.
 - `public/cv/matias-diez-canseco.pdf`: supplied original English CV, served locally. The Spanish page labels its download as an English CV.
