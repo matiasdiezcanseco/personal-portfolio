@@ -1,0 +1,251 @@
+{
+  "meta": {
+    "title": "Matías Diez-Canseco | Arquitecto de Soluciones e Ingeniero Full Stack",
+    "description": "Arquitecto de soluciones e ingeniero full stack enfocado en sistemas fintech, flujos durables e ingeniería con IA. En Lima, abierto al trabajo remoto."
+  },
+  "ui": {
+    "skip": "Saltar al contenido",
+    "home": "Inicio",
+    "navigation": "Navegación principal",
+    "menu": "Abrir menú",
+    "close": "Cerrar menú",
+    "menuTitle": "Navegación",
+    "language": "Cambiar a inglés",
+    "onPage": "En esta página",
+    "context": "Un poco de contexto.",
+    "sideNote": "Arquitectura, implementación\ny las personas que hacen ambas.",
+    "seeWork": "Ver mi trabajo",
+    "download": "Descargar CV",
+    "location": "Lima, Perú · Abierto al trabajo remoto",
+    "viewGithub": "Ver GitHub",
+    "closedSource": "Código privado",
+    "backTop": "Volver al inicio",
+    "contactTitle": "Hablemos de ingeniería.",
+    "contactDescription": "Estoy en Lima y abierto a oportunidades remotas en arquitectura de soluciones, ingeniería full stack y liderazgo técnico.",
+    "cvLanguage": "CV en inglés",
+    "notFound": "Página no encontrada",
+    "notFoundDescription": "Esta página no existe. Puedes volver al portafolio desde aquí.",
+    "returnHome": "Volver al portafolio"
+  },
+  "nav": {
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "work": "Trabajo destacado",
+    "projects": "Proyectos personales",
+    "skills": "Especialidades",
+    "background": "Educación y formación",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "intro": "Arquitecto de Soluciones e Ingeniero Full Stack",
+    "headline": ["Del diseño de soluciones", "al software en producción."],
+    "description": "Lidero un equipo multidisciplinario de nueve personas que construye una plataforma de pagos digitales con 3 millones de usuarios. Mi trabajo abarca arquitectura de soluciones, desarrollo full stack y estabilidad de la plataforma."
+  },
+  "about": [
+    "Desde 2022 construyo productos fintech. He pasado de desarrollador frontend a ingeniero full stack y, después, a arquitecto de soluciones.",
+    "Hoy estoy a cargo del diseño de soluciones para nuevas iniciativas, sigo involucrado en la implementación y ayudo a los equipos a resolver incidentes críticos en producción. También construyo herramientas y flujos de ingeniería que otros desarrolladores pueden usar en toda la organización.",
+    "Empecé en la ingeniería mecatrónica y el liderazgo de proyectos internacionales. Esa experiencia marcó mi forma de trabajar: hacerme cargo de principio a fin, coordinar entre disciplinas y mantener la calma cuando hay mucho en juego."
+  ],
+  "experienceIntro": "En Devsu desde marzo de 2022, en una colaboración de largo plazo con Banco Pichincha y su fintech Deuna.",
+  "jobs": [
+    {
+      "id": "architect",
+      "date": "Abr 2026 — Actualidad",
+      "title": "Arquitecto de Soluciones",
+      "company": "Deuna · Banco Pichincha · a través de Devsu",
+      "paragraphs": [
+        "Lidero a tres ingenieros frontend, tres backend y tres de QA en la app de pagos P2P y QR de Deuna. Estoy a cargo del diseño de soluciones para la app móvil y los servicios backend, alineo la arquitectura entre equipos y defino prioridades con los Product Owners.",
+        "Lidero la reestructuración de la plataforma, migraciones de servicios y salas de crisis en producción. Introduje un flujo de desarrollo con IA y lo extendí al equipo."
+      ],
+      "tags": [
+        "Diseño de soluciones",
+        "Liderazgo de equipos",
+        "Gestión de incidentes",
+        "Claude Code"
+      ]
+    },
+    {
+      "id": "full-stack",
+      "date": "May 2024 — Abr 2026",
+      "title": "Desarrollador Full Stack",
+      "company": "Deuna · Banco Pichincha · a través de Devsu",
+      "paragraphs": [
+        "Entré al equipo de Onboarding como desarrollador React Native y amplié mi trabajo al backend a medida que crecía la demanda. Construí el framework de flujos sobre Restate, mejoré el onboarding y reinscripción de jóvenes, y desarrollé procesos de cierre, reapertura y autogestión de cuentas."
+      ],
+      "tags": ["React Native", "NestJS", "CQRS", "Kafka", "Restate"]
+    },
+    {
+      "id": "frontend",
+      "date": "Mar 2022 — May 2024",
+      "title": "Desarrollador Frontend → Full Stack",
+      "company": "Banco Pichincha · a través de Devsu",
+      "paragraphs": [
+        "Reconocido como Mejor Desarrollador de Banco Pichincha en 2022 y 2023.",
+        "Lideré el desarrollo frontend del onboarding bancario digital, construí micro frontends y servicios BFF, y participé en la elección del stack y la arquitectura de nuevos productos. Entregamos a tiempo la campaña Pichincha Mundialista y convertí la integración WebView de Onboard Express en un módulo reutilizado por posteriores integraciones dentro de la app.",
+        "Entre asignaciones, contribuí a Profile, la plataforma interna de talento de Devsu, con Next.js, Firebase y GCP."
+      ],
+      "tags": ["React", "Angular", "Node.js", "GraphQL", "Micro frontends"]
+    },
+    {
+      "id": "transition",
+      "date": "Abr 2021 — Feb 2022",
+      "title": "Transición a Ingeniería de Software",
+      "company": "",
+      "paragraphs": [
+        "Formación autodidacta a tiempo completo en JavaScript, TypeScript, React, Node.js y desarrollo en la nube. Construí proyectos personales, desde clones de aplicaciones hasta servicios web automatizados."
+      ],
+      "tags": []
+    },
+    {
+      "id": "project-leader",
+      "date": "Ene 2020 — Abr 2021",
+      "title": "Líder de Proyectos",
+      "company": "AGP Group · promovido desde Projects Trainee",
+      "paragraphs": [
+        "Lideré proyectos de vidrio especializado, coordinando ingeniería, calidad, compras, logística y producción. Gestioné en inglés las relaciones con clientes franceses y japoneses, negocié plazos y requisitos, y transferí conocimientos de procesos de la planta de Perú a la de Colombia."
+      ],
+      "tags": []
+    },
+    {
+      "id": "intern",
+      "date": "Mar 2019 — Jun 2019",
+      "title": "Practicante de Investigación y Desarrollo",
+      "company": "Mine Sense for Miners · MS4M",
+      "paragraphs": [
+        "Diseñé soluciones mecánicas, electrónicas y de software para telemetría y visión por computadora en flotas mineras."
+      ],
+      "tags": []
+    }
+  ],
+  "work": [
+    {
+      "id": "reliability",
+      "title": "Estabilidad para 3 millones de usuarios",
+      "label": "Estabilidad de la plataforma",
+      "paragraphs": [
+        "Lideré el programa de estabilidad que redujo del 15% a menos del 2% la proporción de usuarios mensuales que experimentaban al menos un error. Trabajé con el equipo para encontrar las causas, priorizar las correcciones y delegar su implementación.",
+        "En paralelo, lideré una renovación de la arquitectura con migraciones de servicios, reestructuración de microservicios y nuevos módulos en una plataforma que había crecido durante años."
+      ],
+      "tags": []
+    },
+    {
+      "id": "workflows",
+      "title": "Un framework adoptado por toda la organización",
+      "label": "Sagas y ejecución durable",
+      "paragraphs": [
+        "Diseñé y construí un framework interno sobre Restate que implementa el patrón Saga con reintentos automáticos, compensaciones y orquestación. Se convirtió en el estándar de la organización para los flujos asíncronos."
+      ],
+      "tags": ["Restate", "Sagas", "Ejecución durable"]
+    },
+    {
+      "id": "ai-delivery",
+      "title": "Desarrollo con IA, del ticket al PR revisado",
+      "label": "Flujo de ingeniería",
+      "paragraphs": [
+        "Construí un flujo con Claude Code que conecta Jira, GitHub, Confluence y emuladores Android. Abarca el diseño de soluciones, la implementación guiada por pruebas, pull requests con vistas previas y revisión de código asistida por IA.",
+        "Creé skills para documentación, diagramas de arquitectura y exploración del código, y extendí el flujo al equipo."
+      ],
+      "tags": []
+    },
+    {
+      "id": "onboarding",
+      "title": "Reconstruir el onboarding de cuentas digitales",
+      "label": "Arquitectura frontend y BFF",
+      "paragraphs": [
+        "En Cuenta Transaccional, lideré el frontend de una reconstrucción que reescribió 30 microservicios y migró la web a micro frontends. Diseñé y construí cada micro frontend y cada servicio BFF.",
+        "En Cuentas Únicas, lideré al equipo frontend que integró las cuentas de ahorro para menores en la app móvil y redujo el tiempo de creación de cuentas en un 85%. Diseñé la arquitectura de comunicación entre micro frontends.",
+        "Como uno de los dos desarrolladores principales de Cuenta Flexible, elegí el stack, definí la arquitectura y apliqué ingeniería inversa a servicios heredados sin documentación."
+      ],
+      "tags": []
+    }
+  ],
+  "projectsIntro": "Construyo herramientas para problemas que encuentro en mi día a día, desde registrar lo que como hasta entender en qué gasto mi dinero. Estos proyectos convierten esas necesidades en software que puedo usar.",
+  "projects": [
+    {
+      "id": "grams",
+      "name": "Grams",
+      "description": "Construí Grams para que registrar mi alimentación fuera menos tedioso. Puedo escanear un código de barras, fotografiar una etiqueta nutricional o contarle al asistente de IA qué comí, y comparar el consumo del día con mis metas de calorías y macronutrientes. Se instala como app web y permite consultar sin conexión los datos cargados previamente.",
+      "technologies": ["React", "TypeScript", "Go", "PostgreSQL", "PWA"],
+      "url": null
+    },
+    {
+      "id": "yupana",
+      "name": "Yupana",
+      "description": "Construí Yupana para ver los gastos de mis tarjetas en un solo lugar, sin registrar cada compra a mano. Convierte las alertas bancarias por correo en movimientos categorizados y compara el gasto con mis hábitos recientes. Los registros financieros se guardan en una base de datos cifrada en mi celular, con IA opcional para interpretar alertas desconocidas.",
+      "technologies": [
+        "React Native",
+        "Expo",
+        "TypeScript",
+        "SQLite",
+        "Android"
+      ],
+      "url": null
+    },
+    {
+      "id": "inklab",
+      "name": "Inklab",
+      "description": "Una herramienta para un problema de impresión: el color en pantalla no coincide con la tinta sobre tela. Genera muestras CMYK, exporta un PNG listo para imprimir a 300 DPI y usa la muestra impresa más cercana para afinar la siguiente prueba. Funciona en el navegador y guarda configuraciones localmente.",
+      "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+      "url": "https://github.com/matiasdiezcanseco/inklab-color-matrix"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Arquitectura",
+      "lines": [
+        "Microservicios, arquitectura orientada a eventos, Sagas, ejecución durable, CQRS, DDD, Clean Architecture, micro frontends y BFF."
+      ]
+    },
+    {
+      "title": "Backend y datos",
+      "lines": [
+        "TypeScript, Node.js, NestJS, GraphQL, REST, Kafka, Restate y Python. PostgreSQL, DynamoDB, Redis, MongoDB y Firestore."
+      ]
+    },
+    {
+      "title": "Frontend y móvil",
+      "lines": ["React Native, React, Next.js, Angular, Vue y Redux."]
+    },
+    {
+      "title": "Nube y entrega",
+      "lines": [
+        "AWS, Kubernetes, CI/CD, GCP, Firebase y aplicaciones serverless."
+      ]
+    },
+    {
+      "title": "Ingeniería con IA",
+      "lines": [
+        "Claude Code, flujos de desarrollo con agentes, skills personalizadas, revisión de código asistida por IA y TDD con agentes."
+      ]
+    },
+    {
+      "title": "Liderazgo técnico",
+      "lines": [
+        "Liderazgo y mentoría de equipos, gestión de incidentes, definición de backlog con Product Owners y alineamiento de arquitectura entre equipos."
+      ]
+    }
+  ],
+  "background": [
+    {
+      "title": "Bachiller en Ingeniería Mecatrónica",
+      "lines": [
+        "Pontificia Universidad Católica del Perú · 2014–2019",
+        "Décimo superior."
+      ]
+    },
+    {
+      "title": "Formación en nube e infraestructura",
+      "lines": [
+        "A Cloud Guru · 2022–2023",
+        "AWS Solutions Architect Associate, AWS Developer Associate, Kubernetes Deep Dive y Azure Fundamentals AZ-900."
+      ]
+    },
+    {
+      "title": "Idiomas",
+      "lines": [
+        "Español · Nativo",
+        "Inglés · C1, Cambridge Certificate in Advanced English."
+      ]
+    }
+  ]
+}
