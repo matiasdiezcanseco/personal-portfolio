@@ -46,13 +46,13 @@ Employer/client names appear only in Experience. Personal projects are Grams, Yu
 
 ## Branding
 
-The MDC vector wordmark and M monogram share geometry in `src/lib/brand.ts`. The black/white/blue system includes SVG, ICO, 180px Apple icon, 192px and 512px app icons, and localized 1200×630 sharing cards.
+The MDC wordmark uses actual Manrope glyph outlines, generated from the licensed local font into `src/lib/wordmark.json` and `public/brand/wordmark.svg`. The header and exported SVG use the same outlines. The M monogram is defined in `src/lib/brand.ts`. The black/white/blue system includes SVG, ICO, 180px Apple icon, 192px and 512px app icons, and localized 1200×630 sharing cards.
 
 ```sh
 npm run brand
 ```
 
-Regenerates committed assets in `public/brand`, `public/icon.svg`, `public/favicon.ico`, and `public/apple-touch-icon.png`. The site self-hosts a variable Manrope WOFF2 font; sharing cards use a local 800-weight TTF. The SIL Open Font License is included in `public/fonts/OFL.txt`. Builds do not fetch fonts or generate images at runtime.
+Regenerates committed assets in `public/brand`, `public/icon.svg`, `public/favicon.ico`, `public/apple-touch-icon.png`, and the wordmark outlines in `src/lib/wordmark.json`. The site self-hosts a variable Manrope WOFF2 font; sharing cards and wordmark generation use a local 800-weight TTF. The SIL Open Font License is included in `public/fonts/OFL.txt`. Builds do not fetch fonts or generate images at runtime.
 
 ## SEO
 

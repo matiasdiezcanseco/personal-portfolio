@@ -57,7 +57,7 @@ export function MobileNav({
         }}
       >
         <SheetHeader>
-          <SheetTitle>{labels.menuTitle}</SheetTitle>
+          <SheetTitle className="sr-only">{labels.menuTitle}</SheetTitle>
           <SheetDescription className="sr-only">
             {labels.navigation}
           </SheetDescription>

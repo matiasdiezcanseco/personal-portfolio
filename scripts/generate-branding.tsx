@@ -3,14 +3,31 @@ import path from "node:path";
 import sharp from "sharp";
 import { ImageResponse } from "next/og.js";
 import React from "react";
+import opentype from "opentype.js";
 import en from "../src/content/en.json";
 import es from "../src/content/es.json";
-import { brandMarkSvg, wordmarkPath } from "../src/lib/brand";
+import { brandMarkSvg } from "../src/lib/brand";
 
 const out = path.join(process.cwd(), "public");
 await mkdir(path.join(out, "brand"), { recursive: true });
 const mark = brandMarkSvg;
-const wordmark = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 32" fill="none"><path d="${wordmarkPath}" stroke="#f2f3f5" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="76" cy="23" r="2.5" fill="#9dbbff"/></svg>`;
+const font = await readFile(path.join(out, "fonts", "manrope-latin.ttf"));
+const typeface = opentype.parse(
+  font.buffer.slice(font.byteOffset, font.byteOffset + font.byteLength),
+);
+const wordmarkGeometry = {
+  width: Math.ceil(typeface.getAdvanceWidth("mdc.", 32) + 4),
+  height: 40,
+  letters: typeface.getPath("mdc", 2, 32, 32).toPathData(3),
+  dot: typeface
+    .getPath(".", 2 + typeface.getAdvanceWidth("mdc", 32), 32, 32)
+    .toPathData(3),
+};
+await writeFile(
+  path.join(process.cwd(), "src", "lib", "wordmark.json"),
+  JSON.stringify(wordmarkGeometry, null, 2) + "\n",
+);
+const wordmark = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${wordmarkGeometry.width} ${wordmarkGeometry.height}"><path d="${wordmarkGeometry.letters}" fill="#f2f3f5"/><path d="${wordmarkGeometry.dot}" fill="#9dbbff"/></svg>`;
 await writeFile(path.join(out, "brand", "wordmark.svg"), wordmark);
 await writeFile(path.join(out, "icon.svg"), mark);
 await writeFile(path.join(out, "brand", "mark.svg"), mark);
@@ -41,7 +58,6 @@ for (const size of [32, 180, 192, 512]) {
   }
 }
 
-const font = await readFile(path.join(out, "fonts", "manrope-latin.ttf"));
 for (const [locale, content] of Object.entries({ en, es })) {
   const response = new ImageResponse(
     <div

@@ -1,21 +1,15 @@
-import { wordmarkPath } from "@/lib/brand";
+import wordmark from "@/lib/wordmark.json";
 
 export function Brand() {
   return (
     <svg
       className="brand-wordmark"
-      viewBox="0 0 80 32"
+      viewBox={`0 0 ${wordmark.width} ${wordmark.height}`}
       fill="none"
       aria-hidden="true"
     >
-      <path
-        d={wordmarkPath}
-        stroke="currentColor"
-        strokeWidth="3.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <circle cx="76" cy="23" r="2.5" fill="var(--brand-accent, #9dbbff)" />
+      <path d={wordmark.letters} fill="currentColor" />
+      <path d={wordmark.dot} fill="var(--brand-accent, #9dbbff)" />
     </svg>
   );
 }
