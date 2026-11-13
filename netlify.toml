@@ -5,5 +5,8 @@
 [build.environment]
   NODE_VERSION = "24"
 
-# Netlify detects Next.js and installs its current OpenNext adapter automatically.
+# Explicit activation is required when migrating this existing site from Vite.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
 # Routing belongs to Next.js: do not add the old /* -> /index.html SPA rewrite.

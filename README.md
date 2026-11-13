@@ -26,7 +26,9 @@ On a standalone Node.js host, use the build/start commands above. This is not a 
 
 The root `netlify.toml` sets `npm run build`, publish directory `.next`, and Node.js 24. These settings override the old build command and publish directory saved in the Netlify UI. `.nvmrc` also selects Node.js 24 for local development and compatible build tools.
 
-Netlify automatically detects Next.js and configures its OpenNext adapter for SSR; it does not run `npm start` as a long-lived server. Do not restore the old SPA catch-all redirect to `/index.html`, which bypasses Next.js routing. No adapter version is pinned, allowing Netlify to provide compatibility updates.
+This existing Netlify site previously used Vite, so its Next.js adapter is explicitly enabled with `@netlify/plugin-nextjs` in `netlify.toml` and `devDependencies`. Automatic framework activation did not occur during migration: the first successful build uploaded raw `.next` files with no functions and returned 404 for every public route. Keep the adapter dependency updated with the framework.
+
+The adapter packages SSR into Netlify Functions; it does not run `npm start` as a long-lived server. Do not restore the old SPA catch-all redirect to `/index.html`, which bypasses Next.js routing.
 
 After deployment, check the root redirect for English and Spanish browser preferences, explicit `/en` and `/es` routes, static branding assets, and the CV download. Confirm the build log selects Node.js 24, `npm run build`, and `.next`.
 
@@ -66,9 +68,12 @@ npm run lint
 npm test
 npm run build
 npm run test:e2e
+npm run test:deployment -- https://your-deploy-preview.netlify.app
 npm audit
 ```
 
 End-to-end tests start and stop a production server on port 3100. Locally they use installed Google Chrome; in CI they use Playwright Chromium (`npx playwright install --with-deps chromium`). Tests cover server-rendered locale content and SEO, assets, language preference, responsive layouts, mobile menu, keyboard dismissal, accordions and reading without JavaScript.
+
+The hosted deployment smoke check verifies root language redirects, both server-rendered locale pages, the CV, a sharing image, and the sitemap against the supplied URL. A successful Netlify build alone is insufficient: run this check against the actual preview before merging.
 
 A narrowly scoped minimatch override updates the development-only TypeScript ESLint dependency to its patched release. Keep it under review when updating eslint-config-next/typescript-eslint.

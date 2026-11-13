@@ -14,7 +14,8 @@
     "lint": "eslint .",
     "test": "tsx --test tests/*.test.ts",
     "test:e2e": "playwright test",
-    "brand": "tsx scripts/generate-branding.tsx"
+    "brand": "tsx scripts/generate-branding.tsx",
+    "test:deployment": "node scripts/check-deployment.mjs"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
@@ -28,6 +29,7 @@
     "tailwind-merge": "^3.0.0"
   },
   "devDependencies": {
+    "@netlify/plugin-nextjs": "^5.16.6",
     "@playwright/test": "^1.56.0",
     "@tailwindcss/postcss": "^4.0.0",
     "@types/node": "^24.0.0",
