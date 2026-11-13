@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "24"
+
+# Netlify detects Next.js and installs its current OpenNext adapter automatically.
+# Routing belongs to Next.js: do not add the old /* -> /index.html SPA rewrite.

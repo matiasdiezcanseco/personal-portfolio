@@ -38,4 +38,6 @@ The design skill's generic commercial-site requirements (fixed screen heights, v
 
 ## Deployment
 
-No external hosting, GitHub publication or production deployment was performed. Use `npm run dev` locally or `npm run build` followed by `npm start` on a host with Next.js SSR support. See the root README for maintenance and commands.
+Netlify migration configuration is now versioned in `netlify.toml` and `.nvmrc`: Node.js 24, `npm run build`, publish `.next`, no SPA rewrite, and automatic OpenNext adapter detection. This addresses the supplied preview log: no configuration file was found, UI settings selected `yarn build` and `dist`, and Node.js 16.20.2 failed the package's `>=22.13.0` engine requirement before Next.js could build. Local validation checks TOML syntax and a production build on Node.js 24; hosted success must be confirmed by the next Netlify deploy.
+
+The implementation itself did not publish production. PR #10 contains the subsequent GitHub publication and Netlify preview configuration. Use `npm run dev` locally or `npm run build` followed by `npm start` on a standalone Node.js host. Netlify uses its adapter instead of the start command. See the root README for maintenance and commands.

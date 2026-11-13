@@ -20,7 +20,15 @@ npm run build
 npm start
 ```
 
-Deploy to a platform supporting Next.js server rendering or a Node.js server. This is not a static export. The old Vite/Netlify SPA redirects were removed because they bypass Next.js routing. Existing production hosting must be configured for Next.js before deploying this branch.
+On a standalone Node.js host, use the build/start commands above. This is not a static export.
+
+### Netlify
+
+The root `netlify.toml` sets `npm run build`, publish directory `.next`, and Node.js 24. These settings override the old build command and publish directory saved in the Netlify UI. `.nvmrc` also selects Node.js 24 for local development and compatible build tools.
+
+Netlify automatically detects Next.js and configures its OpenNext adapter for SSR; it does not run `npm start` as a long-lived server. Do not restore the old SPA catch-all redirect to `/index.html`, which bypasses Next.js routing. No adapter version is pinned, allowing Netlify to provide compatibility updates.
+
+After deployment, check the root redirect for English and Spanish browser preferences, explicit `/en` and `/es` routes, static branding assets, and the CV download. Confirm the build log selects Node.js 24, `npm run build`, and `.next`.
 
 ## Content and design
 
