@@ -1,0 +1,251 @@
+{
+  "meta": {
+    "title": "Matías Diez-Canseco | Solutions Architect & Full Stack Engineer",
+    "description": "Solutions Architect and Full Stack Engineer building fintech systems, durable workflows, and AI-native delivery practices. Based in Lima, open to remote work."
+  },
+  "ui": {
+    "skip": "Skip to content",
+    "home": "Home",
+    "navigation": "Main navigation",
+    "menu": "Open menu",
+    "close": "Close menu",
+    "menuTitle": "Navigation",
+    "language": "Switch to Spanish",
+    "onPage": "On this page",
+    "context": "A little context.",
+    "sideNote": "Architecture, implementation,\nand the people delivering both.",
+    "seeWork": "See my work",
+    "download": "Download CV",
+    "location": "Lima, Peru · Open to remote work",
+    "viewGithub": "View GitHub",
+    "closedSource": "Closed source",
+    "backTop": "Back to top",
+    "contactTitle": "Let's talk engineering.",
+    "contactDescription": "I'm based in Lima and open to remote opportunities in solution architecture, full stack engineering, and technical leadership.",
+    "cvLanguage": "CV in English",
+    "notFound": "Page not found",
+    "notFoundDescription": "This page does not exist. You can return to the portfolio below.",
+    "returnHome": "Return to portfolio"
+  },
+  "nav": {
+    "about": "About",
+    "experience": "Experience",
+    "work": "Selected work",
+    "projects": "Personal projects",
+    "skills": "Expertise",
+    "background": "Education & training",
+    "contact": "Contact"
+  },
+  "hero": {
+    "intro": "Solutions Architect & Full Stack Engineer",
+    "headline": ["From solution design", "to software in production."],
+    "description": "I lead a cross-functional team of nine building a digital payments platform with 3 million users. My work spans solution architecture, full stack development, and platform reliability."
+  },
+  "about": [
+    "I've been building fintech products since 2022, progressing from frontend developer to full stack engineer to solutions architect.",
+    "Today I own solution design for new initiatives, stay involved in implementation, and help teams through critical production incidents. I also build tools and engineering workflows that other developers can use across the organization.",
+    "I started in mechatronic engineering and international project leadership. That experience shaped how I work: take ownership from start to finish, coordinate across disciplines, and stay composed when the stakes are high."
+  ],
+  "experienceIntro": "At Devsu since March 2022, on a long-term engagement with Banco Pichincha and its fintech Deuna.",
+  "jobs": [
+    {
+      "id": "architect",
+      "date": "Apr 2026 — Present",
+      "title": "Solutions Architect",
+      "company": "Deuna · Banco Pichincha · via Devsu",
+      "paragraphs": [
+        "Lead three frontend engineers, three backend engineers, and three QA engineers on Deuna's P2P and QR payments app. Own solution design across mobile and backend services, align architecture across teams, and define priorities with Product Owners.",
+        "Lead platform restructuring, service migrations, and production war rooms. Introduced an AI-native delivery workflow and rolled it out to the team."
+      ],
+      "tags": [
+        "Solution design",
+        "Team leadership",
+        "Incident command",
+        "Claude Code"
+      ]
+    },
+    {
+      "id": "full-stack",
+      "date": "May 2024 — Apr 2026",
+      "title": "Full Stack Developer",
+      "company": "Deuna · Banco Pichincha · via Devsu",
+      "paragraphs": [
+        "Joined Onboarding as a React Native developer and expanded into backend engineering as demand grew. Built the Restate workflow framework, improved teen onboarding and re-enrollment, and delivered account closure, reopening, and self-service management flows."
+      ],
+      "tags": ["React Native", "NestJS", "CQRS", "Kafka", "Restate"]
+    },
+    {
+      "id": "frontend",
+      "date": "Mar 2022 — May 2024",
+      "title": "Frontend → Full Stack Developer",
+      "company": "Banco Pichincha · via Devsu",
+      "paragraphs": [
+        "Named Banco Pichincha's Best Developer in 2022 and 2023.",
+        "Led frontend delivery for digital banking onboarding, built micro frontends and BFF services, and helped define the stack and architecture for greenfield products. Delivered the Pichincha Mundialista campaign on time and made Onboard Express's WebView integration reusable across later in-app integrations.",
+        "Between engagements, contributed to Devsu's internal talent platform, Profile, using Next.js, Firebase, and GCP."
+      ],
+      "tags": ["React", "Angular", "Node.js", "GraphQL", "Micro frontends"]
+    },
+    {
+      "id": "transition",
+      "date": "Apr 2021 — Feb 2022",
+      "title": "Transition to Software Engineering",
+      "company": "",
+      "paragraphs": [
+        "Full-time, self-directed training in JavaScript, TypeScript, React, Node.js, and cloud development. Built personal projects ranging from app clones to automated web services."
+      ],
+      "tags": []
+    },
+    {
+      "id": "project-leader",
+      "date": "Jan 2020 — Apr 2021",
+      "title": "Project Leader",
+      "company": "AGP Group · promoted from Projects Trainee",
+      "paragraphs": [
+        "Led specialty-glass projects across engineering, quality, sourcing, logistics, and production. Managed French and Japanese client relationships in English, negotiated schedules and requirements, and transferred process know-how from the Peru plant to Colombia."
+      ],
+      "tags": []
+    },
+    {
+      "id": "intern",
+      "date": "Mar 2019 — Jun 2019",
+      "title": "Research & Development Intern",
+      "company": "Mine Sense for Miners · MS4M",
+      "paragraphs": [
+        "Designed mechanical, electronic, and software solutions for telemetry and computer vision in mining fleets."
+      ],
+      "tags": []
+    }
+  ],
+  "work": [
+    {
+      "id": "reliability",
+      "title": "Reliability for 3 million users",
+      "label": "Platform reliability",
+      "paragraphs": [
+        "Led the stability program that reduced the share of monthly users experiencing at least one error from 15% to under 2%. Worked with the team to identify root causes, prioritize fixes, and delegate implementation.",
+        "Alongside this, led a re-architecture involving service migrations, microservice restructuring, and new modules on a platform that had grown for years."
+      ],
+      "tags": []
+    },
+    {
+      "id": "workflows",
+      "title": "A workflow framework adopted organization-wide",
+      "label": "Sagas & durable execution",
+      "paragraphs": [
+        "Designed and built an internal framework over Restate implementing the Saga pattern with automatic retries, compensations, and orchestration. It became the organization's standard for asynchronous workflows."
+      ],
+      "tags": ["Restate", "Sagas", "Durable execution"]
+    },
+    {
+      "id": "ai-delivery",
+      "title": "AI-native delivery, from ticket to reviewed PR",
+      "label": "Engineering workflow",
+      "paragraphs": [
+        "Built a Claude Code workflow connecting Jira, GitHub, Confluence, and Android emulators. It covers solution design, test-driven implementation, pull requests with visual previews, and AI-assisted code review.",
+        "Created custom skills for documentation, architecture diagrams, and codebase exploration, then rolled the workflow out to the team."
+      ],
+      "tags": []
+    },
+    {
+      "id": "onboarding",
+      "title": "Rebuilding digital account onboarding",
+      "label": "Frontend & BFF architecture",
+      "paragraphs": [
+        "For Transactional Account, led frontend delivery during a rebuild that rewrote 30 microservices and moved the web app to micro frontends. Designed and built every micro frontend and BFF service.",
+        "For Unique Accounts, led the frontend team bringing savings accounts for minors into the mobile app, cutting account creation time by 85%. Designed the micro frontend communication architecture.",
+        "As one of two core developers on Flexible Account, chose the stack, defined the architecture, and reverse-engineered undocumented legacy services."
+      ],
+      "tags": []
+    }
+  ],
+  "projectsIntro": "I build tools for problems I encounter in daily life, from tracking what I eat to understanding where my money goes. These projects turn those needs into software I can use.",
+  "projects": [
+    {
+      "id": "grams",
+      "name": "Grams",
+      "description": "I built Grams to make daily food logging less of a chore. I can scan a barcode, photograph a nutrition label, or tell the AI assistant what I ate, then compare the day's intake with my calorie and macro goals. Installable as a web app, with offline access to previously loaded data.",
+      "technologies": ["React", "TypeScript", "Go", "PostgreSQL", "PWA"],
+      "url": null
+    },
+    {
+      "id": "yupana",
+      "name": "Yupana",
+      "description": "I built Yupana to see my spending across cards in one place, without entering every purchase by hand. It turns bank email alerts into categorized transactions and compares spending with recent habits. Financial records stay in an encrypted database on my phone, with optional AI assistance for unfamiliar alerts.",
+      "technologies": [
+        "React Native",
+        "Expo",
+        "TypeScript",
+        "SQLite",
+        "Android"
+      ],
+      "url": null
+    },
+    {
+      "id": "inklab",
+      "name": "Inklab",
+      "description": "A tool for a practical printing problem: colors on a screen don't match ink on fabric. Generate CMYK test patches, export a print-ready PNG at 300 DPI, then use the closest printed patch to refine the next batch. Runs entirely in the browser, with local presets.",
+      "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+      "url": "https://github.com/matiasdiezcanseco/inklab-color-matrix"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Architecture",
+      "lines": [
+        "Microservices, event-driven architecture, Sagas, durable execution, CQRS, DDD, Clean Architecture, micro frontends, and BFFs."
+      ]
+    },
+    {
+      "title": "Backend & data",
+      "lines": [
+        "TypeScript, Node.js, NestJS, GraphQL, REST, Kafka, Restate, and Python. PostgreSQL, DynamoDB, Redis, MongoDB, and Firestore."
+      ]
+    },
+    {
+      "title": "Frontend & mobile",
+      "lines": ["React Native, React, Next.js, Angular, Vue, and Redux."]
+    },
+    {
+      "title": "Cloud & delivery",
+      "lines": [
+        "AWS, Kubernetes, CI/CD, GCP, Firebase, and serverless applications."
+      ]
+    },
+    {
+      "title": "AI-native engineering",
+      "lines": [
+        "Claude Code, agentic development workflows, custom skills, AI-assisted code review, and TDD with agents."
+      ]
+    },
+    {
+      "title": "Technical leadership",
+      "lines": [
+        "Team leadership and mentoring, incident command, backlog definition with Product Owners, and cross-team architectural alignment."
+      ]
+    }
+  ],
+  "background": [
+    {
+      "title": "B.Sc. Mechatronic Engineering",
+      "lines": [
+        "Pontificia Universidad Católica del Perú · 2014–2019",
+        "Top 10% of class."
+      ]
+    },
+    {
+      "title": "Cloud & infrastructure training",
+      "lines": [
+        "A Cloud Guru · 2022–2023",
+        "AWS Solutions Architect Associate, AWS Developer Associate, Kubernetes Deep Dive, and Azure Fundamentals AZ-900."
+      ]
+    },
+    {
+      "title": "Languages",
+      "lines": [
+        "Spanish · Native",
+        "English · C1, Cambridge Certificate in Advanced English."
+      ]
+    }
+  ]
+}

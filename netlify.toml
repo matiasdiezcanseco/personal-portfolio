@@ -1,4 +1,12 @@
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "24"
+
+# Explicit activation is required when migrating this existing site from Vite.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Routing belongs to Next.js: do not add the old /* -> /index.html SPA rewrite.
