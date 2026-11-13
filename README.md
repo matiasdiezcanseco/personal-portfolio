@@ -72,7 +72,7 @@ npm run test:deployment -- https://your-deploy-preview.netlify.app
 npm audit
 ```
 
-End-to-end tests start and stop a production server on port 3100. Locally they use installed Google Chrome; in CI they use Playwright Chromium (`npx playwright install --with-deps chromium`). Tests cover server-rendered locale content and SEO, assets, language preference, responsive layouts, mobile menu, keyboard dismissal, accordions and reading without JavaScript.
+End-to-end tests start and stop a production server on port 3100. Locally they use installed Google Chrome; in CI they use Playwright Chromium (`npx playwright install --with-deps chromium`). Tests cover server-rendered locale content and SEO, assets, language preference, responsive layouts, mobile menu, keyboard dismissal, accordions and reading without JavaScript. Mobile navigation regressions verify that every selected section stays in view and receives focus after the sheet finishes closing, in both languages on phone and tablet layouts; ordinary dismissal still restores focus to the hamburger.
 
 The hosted deployment smoke check verifies root language redirects, both server-rendered locale pages, the CV, a sharing image, and the sitemap against the supplied URL. A successful Netlify build alone is insufficient: run this check against the actual preview before merging.
 

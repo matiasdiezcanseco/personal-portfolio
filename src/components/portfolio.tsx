@@ -126,7 +126,9 @@ export function Portfolio({
           />
           <div className="content">
             <section id="about" aria-labelledby="about-title">
-              <h2 id="about-title">{c.nav.about}</h2>
+              <h2 id="about-title" tabIndex={-1}>
+                {c.nav.about}
+              </h2>
               {c.about.map((p) => (
                 <p className="prose" key={p}>
                   {p}
@@ -134,7 +136,9 @@ export function Portfolio({
               ))}
             </section>
             <section id="experience" aria-labelledby="experience-title">
-              <h2 id="experience-title">{c.nav.experience}</h2>
+              <h2 id="experience-title" tabIndex={-1}>
+                {c.nav.experience}
+              </h2>
               <p className="prose">{c.experienceIntro}</p>
               {c.jobs.map((job) => (
                 <article className="entry" key={job.id}>
@@ -161,12 +165,16 @@ export function Portfolio({
               ))}
             </section>
             <section id="work" aria-labelledby="work-title">
-              <h2 id="work-title">{c.nav.work}</h2>
+              <h2 id="work-title" tabIndex={-1}>
+                {c.nav.work}
+              </h2>
               <SelectedWork items={c.work} />
             </section>
             <section id="projects" aria-labelledby="projects-title">
               <div className="section-head">
-                <h2 id="projects-title">{c.nav.projects}</h2>
+                <h2 id="projects-title" tabIndex={-1}>
+                  {c.nav.projects}
+                </h2>
                 <a href={`${site.github}?tab=repositories`}>
                   {c.ui.viewGithub}
                   <ArrowUpRight aria-hidden="true" />
@@ -205,7 +213,9 @@ export function Portfolio({
             </section>
             {(["skills", "background"] as const).map((id) => (
               <section key={id} id={id} aria-labelledby={`${id}-title`}>
-                <h2 id={`${id}-title`}>{c.nav[id]}</h2>
+                <h2 id={`${id}-title`} tabIndex={-1}>
+                  {c.nav[id]}
+                </h2>
                 {c[id].map((item) => (
                   <div className="credential" key={item.title}>
                     <h3>{item.title}</h3>
@@ -222,7 +232,9 @@ export function Portfolio({
       <footer id="contact">
         <div className="wrap">
           <div className="contact-layout">
-            <h2>{c.nav.contact}</h2>
+            <h2 id="contact-title" tabIndex={-1}>
+              {c.nav.contact}
+            </h2>
             <div>
               <p className="contact-title">{c.ui.contactTitle}</p>
               <p className="description">{c.ui.contactDescription}</p>

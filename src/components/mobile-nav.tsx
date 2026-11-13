@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -26,6 +26,7 @@ export function MobileNav({
   links: { id: string; label: string }[];
 }) {
   const [open, setOpen] = useState(false);
+  const navigationTarget = useRef<string | null>(null);
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
@@ -42,6 +43,18 @@ export function MobileNav({
         className="mobile-sheet"
         side="right"
         closeLabel={labels.close}
+        onCloseAutoFocus={(event) => {
+          const id = navigationTarget.current;
+          navigationTarget.current = null;
+          if (!id) return;
+
+          // Restoring focus to the hamburger would scroll away from the anchor.
+          event.preventDefault();
+          document
+            .getElementById(id)
+            ?.querySelector("h2")
+            ?.focus({ preventScroll: true });
+        }}
       >
         <SheetHeader>
           <SheetTitle>{labels.menuTitle}</SheetTitle>
@@ -51,7 +64,14 @@ export function MobileNav({
         </SheetHeader>
         <nav aria-label={labels.navigation} className="sheet-links">
           {links.map(({ id, label }) => (
-            <a key={id} href={`#${id}`} onClick={() => setOpen(false)}>
+            <a
+              key={id}
+              href={`#${id}`}
+              onClick={() => {
+                navigationTarget.current = id;
+                setOpen(false);
+              }}
+            >
               {label}
             </a>
           ))}

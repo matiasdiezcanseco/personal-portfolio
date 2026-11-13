@@ -29,7 +29,7 @@ The approved portfolio is implemented in Next.js 16.4.6 / React 19.3.1 with App 
 - `npm run typecheck`: passed.
 - `npm run lint`: passed without warnings.
 - `npm test`: 2 tests passed (weighted locale negotiation, translation coverage and editorial constraints).
-- `npm run test:e2e`: 5 tests passed against a production server, including SSR/SEO/assets, redirect preferences, manual language switch, mobile sheet navigation and Escape/focus return, accordion behavior, JavaScript-disabled rendering, and overflow checks for both languages at 320, 390, 768, 1024 and 1440px.
+- `npm run test:e2e`: 9 tests passed against a production server, including SSR/SEO/assets, redirect preferences, manual language switch, mobile sheet navigation and Escape/focus return, accordion behavior, JavaScript-disabled rendering, and overflow checks for both languages at 320, 390, 768, 1024 and 1440px. Four mobile navigation regressions check every destination in English and Spanish at 390px and 768px, using pointer and keyboard activation, after the sheet's exit animation and focus cleanup finish.
 - `npm audit`: 0 vulnerabilities. A scoped development-dependency override resolves the TypeScript ESLint minimatch advisory.
 - `git diff --check`: passed; Git reports only its Windows LF/CRLF conversion notices.
 - Production screenshots were reviewed for the approved English desktop and Spanish mobile layouts. Browser tests capture final EN/ES desktop/mobile screenshots under ignored `test-results/`.
@@ -37,6 +37,8 @@ The approved portfolio is implemented in Next.js 16.4.6 / React 19.3.1 with App 
 The design skill's generic commercial-site requirements (fixed screen heights, visuals in every section and mandatory animated moments) are superseded by the user's explicitly approved text-led portfolio direction. Its earlier gate report remains a historical prototype artifact, not a claimed production pass. The approved visual hierarchy is retained; targeted production tests and visual inspection validate the actual implementation.
 
 ## Deployment
+
+Mobile navigation fix: selecting a menu anchor previously scrolled to the section, then Radix Dialog's close autofocus restored focus to the hamburger trigger and scrolled back to the header. A production browser test reproduced the destination heading outside the viewport despite the correct URL hash. Navigation-triggered closes now prevent trigger autofocus and move focus to the destination heading with `preventScroll`; headings use `tabIndex=-1` for programmatic focus without adding tab stops. Escape, the close button, and other dismissals retain the default focus return. The original failing regression now passes, including all destinations in both locales.
 
 Netlify migration configuration is versioned in `netlify.toml` and `.nvmrc`: Node.js 24, `npm run build`, publish `.next`, no SPA rewrite, and explicit OpenNext adapter activation through `@netlify/plugin-nextjs`. The first fix addressed Node.js 16.20.2 failing the package's engine requirement. Its replacement build succeeded, but deployment `6af732b813b82102166916e4` reported `plugin_state: "none"`, no functions and no edge functions, while the hosted smoke check returned 404 for every page and asset. That evidence confirmed the existing Vite site's adapter had not been activated automatically. Explicit plugin configuration and its dependency address the missing runtime. `npm run test:deployment -- <url>` checks actual hosted behavior; the next preview must pass it before this deployment issue is considered resolved.
 
